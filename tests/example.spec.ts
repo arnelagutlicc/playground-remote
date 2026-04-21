@@ -8,6 +8,8 @@ test('has title', async ({ page }) => {
 });
 
 test('get started link', async ({ page }) => {
+
+  expect(false).toBeTruthy();
   await page.goto('https://playwright.dev/');
 
   // Click the get started link.
