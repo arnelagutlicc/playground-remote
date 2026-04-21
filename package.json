@@ -1,0 +1,23 @@
+{
+  "name": "playground-remote",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arnelagutlicc/playground-remote.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/arnelagutlicc/playground-remote/issues"
+  },
+  "homepage": "https://github.com/arnelagutlicc/playground-remote#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.59.1",
+    "@types/node": "^25.6.0"
+  }
+}
