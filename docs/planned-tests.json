@@ -1,0 +1,8 @@
+[
+  {
+    "id": "planned-1",
+    "name": "verify login flow",
+    "description": "User can log in with valid credentials and is redirected to the dashboard.",
+    "addedDate": "2026-04-21"
+  }
+]
