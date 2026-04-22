@@ -262,6 +262,19 @@
     .planned-desc { color: #8b949e; font-size: 13px; }
     .planned-date { color: #8b949e; font-size: 12px; white-space: nowrap; }
 
+    /* ── Fixme group row ─────────────────────────────────────────────── */
+    .fixme-group-row td {
+      background: #161b22 !important;
+      color: #8b949e;
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      user-select: none;
+      padding: 7px 12px;
+      border-bottom: 1px solid #21262d;
+    }
+    .fixme-group-row:hover td { background: #1c2128 !important; }
+
     /* ── Sync warnings ───────────────────────────────────────────────── */
     .warn-row td { background: #2d1e0f !important; }
     .warn-row:hover td { background: #3a260f !important; }
@@ -412,12 +425,11 @@
 
   // Donut chart: segments = [{value, color, label}], total = sum
   function buildDonutSVG(segments, total) {
-    const CX = 74, CY = 74, OR = 62, IR = 40, W = 252, H = 152;
+    const CX = 74, CY = 74, OR = 62, IR = 40, W = 300, H = 152;
     const nonZero = segments.filter(s => s.value > 0);
 
     let paths;
     if (nonZero.length === 1) {
-      // Single segment — draw a full annulus (path arc trick fails for 360°)
       const col = nonZero[0].color;
       paths = `<circle cx="${CX}" cy="${CY}" r="${OR}" fill="${col}"/>
                <circle cx="${CX}" cy="${CY}" r="${IR}" fill="#0d1117"/>`;
@@ -431,7 +443,6 @@
       }).join('');
     }
 
-    // Centre: % of scope that's implemented (anything that isn't "Planned")
     const implemented = segments.filter(s => s.label !== 'Planned').reduce((a,s) => a+s.value, 0);
     const pct = total > 0 ? Math.round(implemented / total * 100) : 0;
 
@@ -439,13 +450,15 @@
       <text x="${CX}" y="${CY-5}"  text-anchor="middle" fill="#e6edf3" font-size="19" font-weight="700" font-family="-apple-system,system-ui">${pct}%</text>
       <text x="${CX}" y="${CY+11}" text-anchor="middle" fill="#8b949e"  font-size="9"  letter-spacing="0.5" font-family="-apple-system,system-ui">COVERED</text>`;
 
-    const LX = 150, LY0 = 16, LS = 28;
+    // LX: colour swatch x  |  LX+14: label start  |  W-10: number right-align
+    // Gap between label start and number column = (W-10) - (LX+14) = 130px — enough for "Not implemented"
+    const LX = 156, LY0 = 20, LS = 30;
     const legend = segments.map((s, i) => {
       const y = LY0 + i * LS;
       return `
         <rect x="${LX}" y="${y}" width="9" height="9" rx="2" fill="${s.color}"/>
         <text x="${LX+14}" y="${y+9}" fill="#c9d1d9" font-size="11" font-family="-apple-system,system-ui">${esc(s.label)}</text>
-        <text x="${W-8}"   y="${y+9}" text-anchor="end" fill="#e6edf3" font-size="12" font-weight="600" font-family="-apple-system,system-ui">${s.value}</text>`;
+        <text x="${W-10}"  y="${y+9}" text-anchor="end" fill="#e6edf3" font-size="12" font-weight="600" font-family="-apple-system,system-ui">${s.value}</text>`;
     }).join('');
 
     return `<svg viewBox="0 0 ${W} ${H}" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:${H}px;display:block">
@@ -471,8 +484,8 @@
     const el = document.getElementById(`coverage-${slug}`);
     if (!el) return;
 
-    const passed  = runData ? (runData.summary?.passed ?? 0) : 0;
-    const failed  = runData ? (runData.summary?.failed ?? 0) : 0;
+    const passed = runData ? (runData.summary?.passed ?? 0) : 0;
+    const failed = runData ? (runData.summary?.failed ?? 0) : 0;
     const { fixmeTitles, onlyInFixme, onlyInPlanned } = reconcile(runData, planned);
 
     // Unique not-implemented count = union of fixme titles + planned names not in fixme
@@ -561,14 +574,15 @@
       return '<p class="loading-msg">No per-test data available for this run.</p>';
 
     const { passed=0, failed=0, skipped=0, fixme=0 } = data.summary ?? {};
+    const uid = `subtable-${Math.random().toString(36).slice(2)}`;
+
     const summaryBadges = [
       passed  ? `<span class="badge badge-pass">${passed} passed</span>`    : '',
       failed  ? `<span class="badge badge-fail">${failed} failed</span>`    : '',
       skipped ? `<span class="badge badge-amber">${skipped} skipped</span>` : '',
-      fixme   ? `<span class="badge badge-grey">${fixme} fixme</span>`      : '',
     ].filter(Boolean).join('');
 
-    const rows = data.tests.map(t => {
+    const nonFixmeRows = data.tests.filter(t => t.status !== 'fixme').map(t => {
       const errHtml = t.error
         ? `<span class="error-text" onclick="this.classList.toggle('expanded')" title="${esc(t.error)}">${esc(t.error)}</span>`
         : '<span style="color:#484f58">—</span>';
@@ -582,11 +596,34 @@
       </tr>`;
     }).join('');
 
+    // Deduplicate fixme rows by title (same test runs once per browser)
+    const seenFixme = new Set();
+    const fixmeRows = data.tests.filter(t => t.status === 'fixme' && !seenFixme.has(t.title) && seenFixme.add(t.title)).map(t =>
+      `<tr class="fixme-row" data-group="${uid}" style="display:none">
+        <td colspan="6" style="color:#484f58;font-size:12px;padding-left:28px">${esc(t.title)}</td>
+      </tr>`
+    ).join('');
+
+    const fixmeGroupRow = fixme > 0 ? `
+      <tr class="fixme-group-row" onclick="toggleFixme('${uid}')">
+        <td colspan="6"><i class="chevron" id="fixme-chev-${uid}">&#9654;</i>Fixme <span style="color:#484f58;font-weight:400">(${seenFixme.size})</span></td>
+      </tr>
+      ${fixmeRows}` : '';
+
     return `<div class="detail-summary">${summaryBadges}</div>
       <table class="sub-table">
         <thead><tr><th>Test</th><th>Suite</th><th>Browser</th><th>Status</th><th>Duration</th><th>Error</th></tr></thead>
-        <tbody>${rows}</tbody>
+        <tbody>${nonFixmeRows}${fixmeGroupRow}</tbody>
       </table>`;
+  }
+
+  // ── Fixme group toggle ────────────────────────────────────────────────────
+  function toggleFixme(uid) {
+    const rows  = document.querySelectorAll(`.fixme-row[data-group="${uid}"]`);
+    const chev  = document.getElementById(`fixme-chev-${uid}`);
+    const open  = rows[0]?.style.display !== 'none';
+    rows.forEach(r => { r.style.display = open ? 'none' : ''; });
+    if (chev) chev.classList.toggle('open', !open);
   }
 
   // ── Row expand / collapse ─────────────────────────────────────────────────
