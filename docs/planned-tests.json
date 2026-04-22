@@ -184,5 +184,83 @@
     "name": "empty area state",
     "description": "An area with no projects renders a graceful empty state with guidance and no error.",
     "addedDate": "2026-04-21"
+  },
+  {
+    "id": "planned-32",
+    "name": "unplanned work card",
+    "description": "Unplanned Work card shows percentage, Above threshold badge when over limit, and warning color progress bar.",
+    "addedDate": "2026-04-22"
+  },
+  {
+    "id": "planned-33",
+    "name": "unplanned work weekly delta",
+    "description": "Unplanned Work card displays weekly delta with directional arrow and from last week label.",
+    "addedDate": "2026-04-22"
+  },
+  {
+    "id": "planned-34",
+    "name": "KPI card info tooltip",
+    "description": "Info icon next to each KPI card title shows a tooltip with the metric definition on hover.",
+    "addedDate": "2026-04-22"
+  },
+  {
+    "id": "planned-35",
+    "name": "sidebar navigation items",
+    "description": "Left sidebar displays Analytics, Dev Tools, Quality, Productivity, and Organisation entries with correct active state.",
+    "addedDate": "2026-04-22"
+  },
+  {
+    "id": "planned-36",
+    "name": "sidebar collapse toggle",
+    "description": "Analytics side panel can be collapsed and expanded via the toggle button and remembers state.",
+    "addedDate": "2026-04-22"
+  },
+  {
+    "id": "planned-37",
+    "name": "dashboards section in sidebar",
+    "description": "Dashboards section in the side panel lists Exploration and can be collapsed via its chevron.",
+    "addedDate": "2026-04-22"
+  },
+  {
+    "id": "planned-38",
+    "name": "add dashboard button",
+    "description": "Plus icon next to the breadcrumb opens the create dashboard flow.",
+    "addedDate": "2026-04-22"
+  },
+  {
+    "id": "planned-39",
+    "name": "theme toggle",
+    "description": "Theme toggle in the sidebar footer switches between light and dark mode and persists across reloads.",
+    "addedDate": "2026-04-22"
+  },
+  {
+    "id": "planned-40",
+    "name": "area links navigate from KPI table",
+    "description": "Clicking an area name in a KPI card table navigates to that area and refreshes the dashboard.",
+    "addedDate": "2026-04-22"
+  },
+  {
+    "id": "planned-41",
+    "name": "per-KPI configuration count",
+    "description": "Configuration warning count is calculated independently per KPI card, reflecting only projects missing that metric's configuration.",
+    "addedDate": "2026-04-22"
+  },
+  {
+    "id": "planned-42",
+    "name": "query project metrics",
+    "description": "Dashboard can query and display individual project-level metrics when navigated to a project.",
+    "addedDate": "2026-04-22"
+  },
+  {
+    "id": "planned-43",
+    "name": "open project link from analytics list",
+    "description": "Listed projects inside Analytics provide a link to open the project view in standard CodeScene.",
+    "addedDate": "2026-04-22"
+  },
+  {
+    "id": "planned-44",
+    "name": "date range displayed in header",
+    "description": "Header displays the current comparison window in DD MMM YYYY - DD MMM YYYY format reflecting the last 7 days.",
+    "addedDate": "2026-04-22"
   }
 ]
