@@ -2,10 +2,16 @@ import fs from 'fs';
 import path from 'path';
 import type { Reporter, FullConfig, Suite, TestCase, TestResult, FullResult } from '@playwright/test/reporter';
 
+// Strips ANSI escape codes (colors, formatting) from error messages
+function stripAnsi(str: string): string {
+    return str.replace(/\[[0-9;]*m/g, '');
+}
+
 type TestRecord = {
     id: string;
     title: string;
     suite: string;
+    project: string;
     status: string;
     duration: string;
     retries: number;
@@ -113,10 +119,12 @@ class DashboardReporter implements Reporter {
             id: test.id,
             title: test.title,
             suite: test.parent.title,
+            // project name is the Playwright config project (e.g. chromium/firefox/webkit)
+            project: test.titlePath()[0] ?? '',
             status: this.deriveStatus(test, result),
             duration: this.formatDuration(result.duration),
             retries: result.retry,
-            error: result.error?.message ?? null,
+            error: result.error?.message ? stripAnsi(result.error.message) : null,
         });
     }
 

@@ -310,6 +310,7 @@
       return `<tr>
         <td>${esc(t.title)}</td>
         <td>${esc(t.suite)}</td>
+        <td>${esc(t.project)}</td>
         <td>${badgeForTestStatus(t.status)}</td>
         <td style="white-space:nowrap">${esc(t.duration)}</td>
         <td>${errorHtml}</td>
@@ -328,7 +329,7 @@
       <div style="margin-bottom:8px;display:flex;gap:6px;flex-wrap:wrap;">${summaryParts}</div>
       <table class="sub-table">
         <thead><tr>
-          <th>Test</th><th>Suite</th><th>Status</th><th>Duration</th><th>Error</th>
+          <th>Test</th><th>Suite</th><th>Browser</th><th>Status</th><th>Duration</th><th>Error</th>
         </tr></thead>
         <tbody>${rows}</tbody>
       </table>`;
