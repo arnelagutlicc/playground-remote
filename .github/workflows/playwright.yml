@@ -4,6 +4,10 @@ on:
     branches: [ main, master ]
   pull_request:
     branches: [ main, master ]
+
+permissions:
+  contents: write
+
 jobs:
   test:
     timeout-minutes: 60
@@ -19,6 +23,17 @@ jobs:
       run: npx playwright install --with-deps
     - name: Run Playwright tests
       run: npx playwright test
+    - name: Commit test results
+      if: ${{ !cancelled() }}
+      env:
+        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: |
+        FILE="docs/data/runs/${{ github.run_id }}.json"
+        CONTENT=$(base64 -w0 "$FILE")
+        gh api --method PUT /repos/${{ github.repository }}/contents/$FILE \
+          -f message="ci: add test results for run ${{ github.run_id }}" \
+          -f content="$CONTENT" \
+          -f branch="${{ github.ref_name }}"
     - uses: actions/upload-artifact@v4
       if: ${{ !cancelled() }}
       with:
