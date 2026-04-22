@@ -262,6 +262,12 @@
     .planned-desc { color: #8b949e; font-size: 13px; }
     .planned-date { color: #8b949e; font-size: 12px; white-space: nowrap; }
 
+    /* ── Sync warnings ───────────────────────────────────────────────── */
+    .warn-row td { background: #2d1e0f !important; }
+    .warn-row:hover td { background: #3a260f !important; }
+    .warn-icon { color: #d29922; font-style: normal; margin-right: 5px; }
+    .warn-text { color: #d29922; font-size: 11px; font-style: italic; }
+
     /* ── States ──────────────────────────────────────────────────────── */
     .empty-state { padding: 20px 16px; color: #8b949e; font-size: 13px; }
     .error-state { padding: 20px 16px; color: #f85149; font-size: 13px; }
@@ -447,29 +453,50 @@
     </svg>`;
   }
 
+  // Cross-reference fixme tests from the run JSON against planned-tests.json entries.
+  // Returns { fixmeTitles, plannedNames, onlyInFixme, onlyInPlanned, matched }
+  function reconcile(runData, planned) {
+    // Deduplicate fixme titles across browsers (same test runs once per browser project)
+    const fixmeTitles = new Set(
+      (runData?.tests ?? []).filter(t => t.status === 'fixme').map(t => t.title)
+    );
+    const plannedNames = new Set(planned.map(p => p.name));
+    const onlyInFixme    = [...fixmeTitles].filter(t => !plannedNames.has(t));
+    const onlyInPlanned  = [...plannedNames].filter(n => !fixmeTitles.has(n));
+    const matched        = [...fixmeTitles].filter(t => plannedNames.has(t));
+    return { fixmeTitles, plannedNames, onlyInFixme, onlyInPlanned, matched };
+  }
+
   function renderCoverageChart(slug, runData, planned) {
     const el = document.getElementById(`coverage-${slug}`);
     if (!el) return;
 
-    const passed  = runData ? (runData.summary?.passed  ?? 0) : 0;
-    const failed  = runData ? (runData.summary?.failed  ?? 0) : 0;
-    const fixme   = runData ? (runData.summary?.fixme   ?? 0) : 0;
-    const plannedN = planned.length;
-    const total    = passed + failed + fixme + plannedN;
+    const passed  = runData ? (runData.summary?.passed ?? 0) : 0;
+    const failed  = runData ? (runData.summary?.failed ?? 0) : 0;
+    const { fixmeTitles, onlyInFixme, onlyInPlanned } = reconcile(runData, planned);
 
-    if (total === 0) {
-      el.innerHTML = '<span class="loading-msg">No data yet.</span>';
-      return;
-    }
+    // Unique not-implemented count = union of fixme titles + planned names not in fixme
+    const notImplemented = fixmeTitles.size + onlyInPlanned.length;
+    const syncIssues     = onlyInFixme.length + onlyInPlanned.length;
+    const total          = passed + failed + notImplemented;
+
+    if (total === 0) { el.innerHTML = '<span class="loading-msg">No data yet.</span>'; return; }
 
     const segments = [
-      { value: passed,  color: '#3fb950', label: 'Passing' },
-      { value: failed,  color: '#f85149', label: 'Failing' },
-      { value: fixme,   color: '#484f58', label: 'Fixme'   },
-      { value: plannedN,color: '#d29922', label: 'Planned' },
+      { value: passed,         color: '#3fb950', label: 'Passing'         },
+      { value: failed,         color: '#f85149', label: 'Failing'         },
+      { value: notImplemented, color: '#484f58', label: 'Not implemented' },
     ];
 
-    el.innerHTML = buildDonutSVG(segments, total);
+    let warning = '';
+    if (syncIssues > 0) {
+      warning = `<div style="margin-top:8px;font-size:11px;color:#d29922;display:flex;align-items:flex-start;gap:4px;">
+        <i class="warn-icon">⚠</i>
+        <span>${syncIssues} sync issue${syncIssues !== 1 ? 's' : ''} — fixme ↔ planned mismatch. See table below.</span>
+      </div>`;
+    }
+
+    el.innerHTML = buildDonutSVG(segments, total) + warning;
   }
 
   // ── Fetchers ──────────────────────────────────────────────────────────────
@@ -644,24 +671,50 @@
       </div>`;
   }
 
-  function renderPlannedIntoCard(slug, items) {
+  function renderPlannedIntoCard(slug, planned, runData) {
     const card = document.getElementById(`planned-${slug}`);
     if (!card) return;
-    if (!items.length) {
-      card.innerHTML = '<div class="card-label">Planned Tests</div><div class="empty-state">No planned tests defined.</div>';
+
+    const { fixmeTitles, onlyInFixme, onlyInPlanned } = reconcile(runData, planned);
+
+    // Build unified row list:
+    // 1. All planned entries (matched or only-in-planned)
+    // 2. fixme titles that have no corresponding planned entry (only-in-fixme)
+    const rows = [];
+
+    for (const p of planned) {
+      const inFixme  = fixmeTitles.has(p.name);
+      const isMissing = !inFixme; // in planned.json but no test.fixme() found
+      rows.push({ name: p.name, desc: p.description, date: p.addedDate,
+                  warn: isMissing, warnMsg: isMissing ? 'Missing test.fixme() in spec' : '' });
+    }
+
+    for (const title of onlyInFixme) {
+      rows.push({ name: title, desc: '—', date: '—',
+                  warn: true, warnMsg: 'Missing entry in planned-tests.json' });
+    }
+
+    if (!rows.length) {
+      card.innerHTML = '<div class="card-label">Planned / Not Implemented</div><div class="empty-state">No planned tests defined.</div>';
       return;
     }
-    const rows = items.map(p => `
-      <tr>
-        <td class="planned-name">${esc(p.name)}</td>
-        <td class="planned-desc">${esc(p.description)}</td>
-        <td class="planned-date">${esc(p.addedDate)}</td>
-      </tr>`).join('');
+
+    const tableRows = rows.map(r => {
+      const nameCell = r.warn
+        ? `<td class="planned-name"><i class="warn-icon">⚠</i>${esc(r.name)} <span class="warn-text">${esc(r.warnMsg)}</span></td>`
+        : `<td class="planned-name">${esc(r.name)}</td>`;
+      return `<tr class="${r.warn ? 'warn-row' : ''}">
+        ${nameCell}
+        <td class="planned-desc">${esc(r.desc)}</td>
+        <td class="planned-date">${esc(r.date)}</td>
+      </tr>`;
+    }).join('');
+
     card.innerHTML = `
-      <div class="card-label">Planned Tests</div>
+      <div class="card-label">Planned / Not Implemented</div>
       <table>
         <thead><tr><th>Name</th><th>Description</th><th>Added</th></tr></thead>
-        <tbody>${rows}</tbody>
+        <tbody>${tableRows}</tbody>
       </table>`;
   }
 
@@ -709,7 +762,7 @@
           fetchPlanned(filename),
           latestWithResults ? fetchRunData(String(latestWithResults.id)) : Promise.resolve(false),
         ]).then(([planned, runData]) => {
-          renderPlannedIntoCard(slug, planned);
+          renderPlannedIntoCard(slug, planned, runData);
           renderCoverageChart(slug, runData, planned);
         });
       }
