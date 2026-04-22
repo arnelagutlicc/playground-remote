@@ -1,8 +1,188 @@
 [
   {
     "id": "planned-1",
-    "name": "verify login flow",
-    "description": "User can log in with valid credentials and is redirected to the dashboard.",
+    "name": "analytics in main nav",
+    "description": "Analytics entry is present in the main navigation header and replaces Plan.",
+    "addedDate": "2026-04-21"
+  },
+  {
+    "id": "planned-2",
+    "name": "navigate from codescene to analytics",
+    "description": "Clicking the Analytics link in standard CodeScene opens the Analytics dashboard.",
+    "addedDate": "2026-04-21"
+  },
+  {
+    "id": "planned-3",
+    "name": "breadcrumb renders full path",
+    "description": "Hierarchical breadcrumb shows the full path from root to the current area.",
+    "addedDate": "2026-04-21"
+  },
+  {
+    "id": "planned-4",
+    "name": "dashboard defaults to area root",
+    "description": "On first load, the dashboard opens at the area root with last-week comparison.",
+    "addedDate": "2026-04-21"
+  },
+  {
+    "id": "planned-5",
+    "name": "breadcrumb ancestor navigation",
+    "description": "Clicking an ancestor in the breadcrumb navigates back and refreshes KPI cards.",
+    "addedDate": "2026-04-21"
+  },
+  {
+    "id": "planned-6",
+    "name": "unassigned projects in tree",
+    "description": "Projects not assigned to an area appear under a dedicated group in the area tree.",
+    "addedDate": "2026-04-21"
+  },
+  {
+    "id": "planned-7",
+    "name": "area explorer collapse and expand",
+    "description": "Collapse all and expand all buttons toggle every node and preserve the selected area.",
+    "addedDate": "2026-04-21"
+  },
+  {
+    "id": "planned-8",
+    "name": "area explorer hierarchy",
+    "description": "The full area hierarchy renders with correct parent-child relationships.",
+    "addedDate": "2026-04-21"
+  },
+  {
+    "id": "planned-9",
+    "name": "search areas and projects",
+    "description": "Cmd+K search returns matching areas and projects and navigates on select.",
+    "addedDate": "2026-04-21"
+  },
+  {
+    "id": "planned-10",
+    "name": "open project button in header",
+    "description": "Open project button with external link icon is visible and opens standard CodeScene in a new tab.",
+    "addedDate": "2026-04-21"
+  },
+  {
+    "id": "planned-11",
+    "name": "exploration dashboard loads four KPI cards",
+    "description": "The Exploration dashboard loads Code Health, Hotspot Code Health, Code Coverage, and Hotspot Code Coverage without errors.",
+    "addedDate": "2026-04-21"
+  },
+  {
+    "id": "planned-12",
+    "name": "code health card",
+    "description": "Code Health card shows a 0-10 score, status badge, and Quality tag.",
+    "addedDate": "2026-04-21"
+  },
+  {
+    "id": "planned-13",
+    "name": "hotspot code health card",
+    "description": "Hotspot Code Health card shows a 0-10 score, status badge, and Quality tag.",
+    "addedDate": "2026-04-21"
+  },
+  {
+    "id": "planned-14",
+    "name": "code coverage card",
+    "description": "Code Coverage card shows percentage, Below 80% badge when below threshold, and warning color.",
+    "addedDate": "2026-04-21"
+  },
+  {
+    "id": "planned-15",
+    "name": "hotspot code coverage card",
+    "description": "Hotspot Code Coverage card shows percentage, Below 90% badge when below threshold, and warning color.",
+    "addedDate": "2026-04-21"
+  },
+  {
+    "id": "planned-16",
+    "name": "weekly delta on KPI cards",
+    "description": "Every KPI card shows a delta value, directional arrow, and from last week label.",
+    "addedDate": "2026-04-21"
+  },
+  {
+    "id": "planned-17",
+    "name": "configuration warning notice",
+    "description": "Cards display an accurate X of Y projects are missing configuration notice with a warning icon.",
+    "addedDate": "2026-04-21"
+  },
+  {
+    "id": "planned-18",
+    "name": "KPI area list sorted by score",
+    "description": "KPI card area list is sorted by total score descending by default and is re-sortable.",
+    "addedDate": "2026-04-21"
+  },
+  {
+    "id": "planned-19",
+    "name": "view all opens full area list",
+    "description": "View all link on a KPI card opens the full area list for that KPI.",
+    "addedDate": "2026-04-21"
+  },
+  {
+    "id": "planned-20",
+    "name": "leaf area hides sub-item list",
+    "description": "Leaf areas display KPI cards without a sub-item list but still show score, status, and delta.",
+    "addedDate": "2026-04-21"
+  },
+  {
+    "id": "planned-21",
+    "name": "KPI cards update on area change",
+    "description": "Navigating between areas refreshes all KPI cards and updates the breadcrumb.",
+    "addedDate": "2026-04-21"
+  },
+  {
+    "id": "planned-22",
+    "name": "child to parent aggregation",
+    "description": "Parent area KPIs correctly aggregate child area values using configured weighting.",
+    "addedDate": "2026-04-21"
+  },
+  {
+    "id": "planned-23",
+    "name": "assign project to area",
+    "description": "Assigning a project to an area includes its metrics in the area KPIs and removes it from unassigned.",
+    "addedDate": "2026-04-21"
+  },
+  {
+    "id": "planned-24",
+    "name": "dev tools hidden for non-admins",
+    "description": "Dev Tools is not visible in the sidebar for non-admin users in production.",
+    "addedDate": "2026-04-21"
+  },
+  {
+    "id": "planned-25",
+    "name": "dev tools visible for admins",
+    "description": "Dev Tools is visible and opens correctly for admin users.",
+    "addedDate": "2026-04-21"
+  },
+  {
+    "id": "planned-26",
+    "name": "dashboard sandbox for admins",
+    "description": "Dashboard Sandbox entry is present under Dev Tools and opens for admin users.",
+    "addedDate": "2026-04-21"
+  },
+  {
+    "id": "planned-27",
+    "name": "user profile details",
+    "description": "Profile menu displays the user initials, full name, and email.",
+    "addedDate": "2026-04-21"
+  },
+  {
+    "id": "planned-28",
+    "name": "codescene external link from profile",
+    "description": "CodeScene external link in the profile menu opens standard CodeScene in a new tab.",
+    "addedDate": "2026-04-21"
+  },
+  {
+    "id": "planned-29",
+    "name": "log out redirects to login",
+    "description": "Clicking Log out ends the session and redirects to the login page.",
+    "addedDate": "2026-04-21"
+  },
+  {
+    "id": "planned-30",
+    "name": "filter standard codescene by area",
+    "description": "Project list in standard CodeScene can be filtered by an area defined in Analytics.",
+    "addedDate": "2026-04-21"
+  },
+  {
+    "id": "planned-31",
+    "name": "empty area state",
+    "description": "An area with no projects renders a graceful empty state with guidance and no error.",
     "addedDate": "2026-04-21"
   }
 ]
