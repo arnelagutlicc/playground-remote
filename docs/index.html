@@ -9,281 +9,484 @@
 
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
-      background: #f6f8fa;
-      color: #24292f;
+      background: #0d1117;
+      color: #e6edf3;
       font-size: 14px;
       line-height: 1.5;
     }
 
-    a { color: #0969da; text-decoration: none; }
+    a { color: #58a6ff; text-decoration: none; }
     a:hover { text-decoration: underline; }
 
+    /* ── Header ─────────────────────────────────────────────────────── */
     header {
-      background: #24292f;
-      color: #fff;
-      padding: 16px 24px;
-      display: flex;
-      align-items: baseline;
-      gap: 12px;
-    }
-    header h1 { font-size: 18px; font-weight: 600; }
-    header .repo { font-size: 13px; color: #8b949e; }
-
-    .container { max-width: 1100px; margin: 0 auto; padding: 24px 16px; }
-
-    .summary-bar {
+      background: #161b22;
+      border-bottom: 1px solid #30363d;
+      padding: 0 24px;
       display: flex;
       align-items: center;
-      gap: 12px;
-      margin-bottom: 24px;
-      font-size: 13px;
-      color: #57606a;
+      justify-content: space-between;
+      height: 56px;
     }
+    .header-left { display: flex; align-items: center; gap: 12px; }
+    .header-logo {
+      width: 28px; height: 28px;
+      background: #58a6ff;
+      border-radius: 6px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 15px; font-weight: 700; color: #0d1117;
+      flex-shrink: 0;
+    }
+    header h1 { font-size: 16px; font-weight: 600; color: #e6edf3; }
+    header .repo { font-size: 12px; color: #8b949e; }
 
-    button#refresh-btn {
-      padding: 4px 12px;
-      font-size: 13px;
+    /* ── Toolbar ────────────────────────────────────────────────────── */
+    .toolbar {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 24px;
+      border-bottom: 1px solid #21262d;
+    }
+    .toolbar-status { font-size: 12px; color: #8b949e; flex: 1; }
+
+    button {
+      padding: 5px 14px;
+      font-size: 12px;
       font-family: inherit;
-      border: 1px solid #d0d7de;
+      font-weight: 500;
+      border: 1px solid #30363d;
       border-radius: 6px;
-      background: #f6f8fa;
+      background: #21262d;
       cursor: pointer;
-      color: #24292f;
+      color: #c9d1d9;
+      transition: background 0.1s, border-color 0.1s;
     }
-    button#refresh-btn:hover { background: #eaeef2; }
-    button#refresh-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+    button:hover { background: #30363d; border-color: #8b949e; }
+    button:disabled { opacity: 0.4; cursor: not-allowed; }
 
-    .card {
-      background: #fff;
-      border: 1px solid #d0d7de;
-      border-radius: 6px;
-      margin-bottom: 24px;
+    /* ── Layout ─────────────────────────────────────────────────────── */
+    .container { max-width: 1140px; margin: 0 auto; padding: 28px 20px; }
+
+    /* ── Workflow section ────────────────────────────────────────────── */
+    .workflow-section { margin-bottom: 44px; }
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 14px;
+    }
+    .section-title { font-size: 16px; font-weight: 600; color: #e6edf3; }
+    .section-meta  { font-size: 12px; color: #8b949e; }
+    .status-dot {
+      width: 10px; height: 10px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+    .dot-pass    { background: #3fb950; box-shadow: 0 0 6px #3fb95066; }
+    .dot-fail    { background: #f85149; box-shadow: 0 0 6px #f8514966; }
+    .dot-running { background: #58a6ff; box-shadow: 0 0 6px #58a6ff66; }
+    .dot-neutral { background: #484f58; }
+
+    /* ── Charts row ──────────────────────────────────────────────────── */
+    .charts-row {
+      display: grid;
+      grid-template-columns: 1fr 268px;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+    .chart-card {
+      background: #161b22;
+      border: 1px solid #30363d;
+      border-radius: 8px;
+      padding: 14px 16px;
       overflow: hidden;
     }
-    .card-header {
-      padding: 12px 16px;
-      border-bottom: 1px solid #d0d7de;
+    .chart-label {
+      font-size: 11px;
       font-weight: 600;
-      font-size: 14px;
-      background: #f6f8fa;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      color: #8b949e;
+      margin-bottom: 10px;
+    }
+    .chart-trend-wrap { line-height: 0; }
+
+    /* ── Cards ──────────────────────────────────────────────────────── */
+    .card {
+      background: #161b22;
+      border: 1px solid #30363d;
+      border-radius: 8px;
+      overflow: hidden;
+      margin-bottom: 12px;
+    }
+    .card-label {
+      padding: 9px 16px;
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      color: #8b949e;
+      border-bottom: 1px solid #21262d;
     }
 
+    /* ── Tables ─────────────────────────────────────────────────────── */
     table { width: 100%; border-collapse: collapse; }
     th {
       text-align: left;
       padding: 8px 16px;
+      font-size: 11px;
       font-weight: 600;
-      font-size: 12px;
-      color: #57606a;
+      color: #8b949e;
       text-transform: uppercase;
       letter-spacing: 0.5px;
-      border-bottom: 1px solid #d0d7de;
-      background: #f6f8fa;
+      border-bottom: 1px solid #21262d;
+      background: #161b22;
     }
     td {
-      padding: 10px 16px;
-      border-bottom: 1px solid #eaeef2;
+      padding: 11px 16px;
+      border-bottom: 1px solid #21262d;
       vertical-align: middle;
+      color: #c9d1d9;
     }
     tr:last-child td { border-bottom: none; }
 
-    /* Run summary rows */
-    .run-row { cursor: pointer; }
-    .run-row:hover td { background: #f6f8fa; }
-    .run-row.expanded td { background: #f0f3f6; }
+    /* ── Run rows ────────────────────────────────────────────────────── */
+    .run-row { cursor: pointer; transition: background 0.1s; }
+    .run-row:hover td { background: #1c2128; }
+    .run-row.expanded td { background: #1c2128; }
 
     .chevron {
-      display: inline-block;
-      font-style: normal;
-      font-size: 10px;
-      color: #57606a;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 16px; height: 16px;
       margin-right: 6px;
+      color: #484f58;
+      font-style: normal;
+      font-size: 9px;
       transition: transform 0.15s ease;
       user-select: none;
+      flex-shrink: 0;
     }
-    .chevron.open { transform: rotate(90deg); }
+    .chevron.open { transform: rotate(90deg); color: #8b949e; }
 
-    .run-num { font-weight: 600; color: #57606a; font-size: 12px; white-space: nowrap; }
-    .commit-msg {
-      color: #57606a;
+    .run-num {
+      display: flex;
+      align-items: center;
+      font-weight: 600;
+      color: #8b949e;
       font-size: 12px;
-      max-width: 220px;
+      white-space: nowrap;
+    }
+    .commit-link {
+      color: #8b949e;
+      font-size: 12px;
+      max-width: 200px;
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
       display: inline-block;
       vertical-align: middle;
     }
+    .commit-link:hover { color: #58a6ff; }
+    .branch-tag {
+      display: inline-block;
+      padding: 1px 7px;
+      border-radius: 20px;
+      font-size: 11px;
+      background: #21262d;
+      border: 1px solid #30363d;
+      color: #8b949e;
+    }
 
-    /* Detail / sub-table rows */
-    .detail-row td { padding: 0; background: #fafbfc; }
+    /* ── Detail panel ────────────────────────────────────────────────── */
+    .detail-row td { padding: 0; background: #0d1117; }
     .detail-inner {
-      padding: 12px 16px 12px 36px;
-      border-top: 1px solid #d0d7de;
+      padding: 14px 16px 14px 38px;
+      border-top: 1px solid #21262d;
+    }
+    .detail-summary {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 12px;
     }
 
     .sub-table { font-size: 13px; }
     .sub-table th {
       font-size: 11px;
       padding: 6px 12px;
-      background: #f0f3f5;
-      text-transform: uppercase;
+      background: #161b22;
       letter-spacing: 0.4px;
     }
     .sub-table td {
       padding: 7px 12px;
-      border-bottom: 1px solid #eaeef2;
-      vertical-align: top;
+      border-bottom: 1px solid #21262d;
+      background: #0d1117;
     }
     .sub-table tr:last-child td { border-bottom: none; }
 
     .error-text {
-      color: #cf222e;
-      font-size: 12px;
+      color: #f85149;
+      font-size: 11px;
       font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, monospace;
-      max-width: 340px;
+      max-width: 320px;
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
       cursor: pointer;
       display: block;
     }
-    .error-text.expanded { white-space: pre-wrap; overflow: visible; }
+    .error-text.expanded { white-space: pre-wrap; overflow: visible; max-width: none; }
 
-    /* Badges */
+    /* ── Badges ──────────────────────────────────────────────────────── */
     .badge {
       display: inline-block;
       padding: 2px 8px;
-      border-radius: 4px;
+      border-radius: 20px;
       font-weight: 600;
       font-size: 11px;
-      letter-spacing: 0.3px;
+      letter-spacing: 0.2px;
       white-space: nowrap;
     }
-    .badge-pass    { background: #dafbe1; color: #1a7f37; }
-    .badge-fail    { background: #ffebe9; color: #cf222e; }
-    .badge-amber   { background: #fff8c5; color: #9a6700; }
-    .badge-blue    { background: #ddf4ff; color: #0550ae; }
-    .badge-grey    { background: #eaeef2; color: #57606a; }
+    .badge-pass  { background: #1a4721; color: #3fb950; border: 1px solid #238636; }
+    .badge-fail  { background: #3d1a1a; color: #f85149; border: 1px solid #8b2019; }
+    .badge-amber { background: #2d2a0f; color: #d29922; border: 1px solid #6e5000; }
+    .badge-blue  { background: #0c2d6b; color: #58a6ff; border: 1px solid #1f6feb; }
+    .badge-grey  { background: #21262d; color: #8b949e; border: 1px solid #30363d; }
 
-    .empty-state { padding: 24px 16px; color: #57606a; font-size: 13px; }
-    .error-state { padding: 24px 16px; color: #cf222e; font-size: 13px; }
-    .loading-msg  { padding: 12px 16px; color: #57606a; font-size: 13px; font-style: italic; }
+    /* ── Planned tests ───────────────────────────────────────────────── */
+    .planned-name { font-weight: 500; color: #e6edf3; }
+    .planned-desc { color: #8b949e; font-size: 13px; }
+    .planned-date { color: #8b949e; font-size: 12px; white-space: nowrap; }
 
+    /* ── States ──────────────────────────────────────────────────────── */
+    .empty-state { padding: 20px 16px; color: #8b949e; font-size: 13px; }
+    .error-state { padding: 20px 16px; color: #f85149; font-size: 13px; }
+    .loading-msg  { color: #8b949e; font-size: 13px; font-style: italic; }
+
+    /* ── Footer ──────────────────────────────────────────────────────── */
     footer {
       text-align: center;
-      padding: 16px;
+      padding: 20px;
       font-size: 12px;
-      color: #8b949e;
+      color: #484f58;
+      border-top: 1px solid #21262d;
+      margin-top: 8px;
     }
   </style>
 </head>
 <body>
 
 <header>
-  <h1>Test History Dashboard</h1>
+  <div class="header-left">
+    <div class="header-logo">T</div>
+    <h1>Test History</h1>
+  </div>
   <span class="repo">arnelagutlicc/playground-remote</span>
 </header>
 
-<div class="container">
+<div class="toolbar">
+  <span class="toolbar-status" id="summary-text">Loading…</span>
+  <button id="refresh-btn" onclick="loadDashboard(true)">↻ Refresh</button>
+</div>
 
-  <div class="summary-bar">
-    <span id="summary-text">Loading…</span>
-    <button id="refresh-btn" onclick="loadRuns(true)">Refresh</button>
-  </div>
-
-  <div class="card">
-    <div class="card-header">Run History</div>
-    <div id="runs-container"><div class="empty-state">Loading…</div></div>
-  </div>
-
-  <div class="card">
-    <div class="card-header">Planned Tests</div>
-    <div id="planned-container"><div class="empty-state">Loading…</div></div>
-  </div>
-
+<div class="container" id="main-container">
+  <div class="empty-state">Loading…</div>
 </div>
 
 <footer>
   <a href="https://github.com/arnelagutlicc/playground-remote" target="_blank">arnelagutlicc/playground-remote</a>
-  &nbsp;·&nbsp; Page loaded <span id="page-load-time"></span>
+  &nbsp;·&nbsp; Loaded <span id="page-load-time"></span>
 </footer>
 
 <script>
   const REPO      = 'arnelagutlicc/playground-remote';
-  const CACHE_KEY = 'gh_runs_cache';
+  const CACHE_KEY = 'gh_runs_cache_v2';
   const CACHE_TTL = 5 * 60 * 1000;
 
   document.getElementById('page-load-time').textContent = new Date().toLocaleTimeString();
 
-  // In-memory cache for per-run JSON files (avoids re-fetching on re-expand)
-  // Values: undefined = not fetched yet, false = fetch failed / 404, object = loaded data
   const runDataCache = new Map();
+  let   knownRunIds  = null;
+  const plannedCache = new Map();
 
-  // ── Escape ────────────────────────────────────────────────────────────────
+  // ── Helpers ───────────────────────────────────────────────────────────────
   function esc(str) {
     return String(str ?? '')
-      .replace(/&/g, '&amp;')
-      .replace(/</g, '&lt;')
-      .replace(/>/g, '&gt;')
-      .replace(/"/g, '&quot;');
+      .replace(/&/g,'&amp;').replace(/</g,'&lt;')
+      .replace(/>/g,'&gt;').replace(/"/g,'&quot;');
   }
-
-  // ── Date format ───────────────────────────────────────────────────────────
   function fmt(iso) {
     return new Date(iso).toLocaleString(undefined, {
-      year: 'numeric', month: 'short', day: 'numeric',
-      hour: '2-digit', minute: '2-digit'
+      month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit'
     });
+  }
+  function slugify(name) {
+    return name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
   }
 
   // ── Badges ────────────────────────────────────────────────────────────────
-  function badgeForConclusion(conclusion) {
-    if (!conclusion)                              return '<span class="badge badge-blue">RUNNING</span>';
-    if (conclusion === 'success')                 return '<span class="badge badge-pass">PASS</span>';
-    if (conclusion === 'failure')                 return '<span class="badge badge-fail">FAIL</span>';
-    if (['cancelled','timed_out'].includes(conclusion))
-      return `<span class="badge badge-amber">${conclusion.toUpperCase().replace('_',' ')}</span>`;
-    return `<span class="badge badge-grey">${conclusion.toUpperCase()}</span>`;
+  function badgeForConclusion(c) {
+    if (!c)                             return '<span class="badge badge-blue">RUNNING</span>';
+    if (c === 'success')                return '<span class="badge badge-pass">PASS</span>';
+    if (c === 'failure')                return '<span class="badge badge-fail">FAIL</span>';
+    if (['cancelled','timed_out'].includes(c))
+      return `<span class="badge badge-amber">${c.toUpperCase().replace('_',' ')}</span>`;
+    return `<span class="badge badge-grey">${esc(c.toUpperCase())}</span>`;
   }
-
-  function badgeForSummary(summary) {
-    if (!summary) return null;
-    return summary.failed > 0
-      ? '<span class="badge badge-fail">FAIL</span>'
-      : '<span class="badge badge-pass">PASS</span>';
+  function badgeForSummary(s) {
+    return s ? (s.failed > 0 ? '<span class="badge badge-fail">FAIL</span>'
+                              : '<span class="badge badge-pass">PASS</span>') : null;
   }
-
-  function badgeForTestStatus(status) {
-    switch (status) {
+  function badgeForTestStatus(s) {
+    switch(s) {
       case 'passed':      return '<span class="badge badge-pass">PASS</span>';
       case 'failed':      return '<span class="badge badge-fail">FAIL</span>';
       case 'timedOut':    return '<span class="badge badge-fail">TIMEOUT</span>';
       case 'skipped':     return '<span class="badge badge-amber">SKIPPED</span>';
       case 'fixme':       return '<span class="badge badge-grey">FIXME</span>';
       case 'interrupted': return '<span class="badge badge-amber">INTERRUPTED</span>';
-      default:            return `<span class="badge badge-grey">${esc(status)}</span>`;
+      default:            return `<span class="badge badge-grey">${esc(s)}</span>`;
     }
   }
-
-  // ── sessionStorage cache for runs list ────────────────────────────────────
-  function readCache() {
-    try {
-      const raw = sessionStorage.getItem(CACHE_KEY);
-      if (!raw) return null;
-      const { data, ts } = JSON.parse(raw);
-      if (Date.now() - ts < CACHE_TTL) return { data, ts };
-    } catch (_) {}
-    return null;
+  function dotForConclusion(c) {
+    if (!c)            return 'dot-running';
+    if (c==='success') return 'dot-pass';
+    if (c==='failure') return 'dot-fail';
+    return 'dot-neutral';
   }
 
+  // ── sessionStorage cache ──────────────────────────────────────────────────
+  function readCache() {
+    try {
+      const { data, ts } = JSON.parse(sessionStorage.getItem(CACHE_KEY) ?? '{}');
+      if (data && Date.now() - ts < CACHE_TTL) return { data, ts };
+    } catch(_) {}
+    return null;
+  }
   function writeCache(data) {
     const ts = Date.now();
     sessionStorage.setItem(CACHE_KEY, JSON.stringify({ data, ts }));
     return ts;
   }
 
-  // ── Per-run JSON fetch ────────────────────────────────────────────────────
+  // ── Charts ────────────────────────────────────────────────────────────────
+
+  // Bar chart: one bar per run, coloured by outcome, oldest → newest left → right
+  function buildRunTrendSVG(runs) {
+    const display = runs.slice(0, 20).reverse();
+    const n = display.length;
+    if (!n) return '';
+    const W = 500, H = 64, gap = 3;
+    const barW = Math.min(28, Math.floor((W - gap * (n + 1)) / n));
+    const used  = n * barW + (n - 1) * gap;
+    const ox    = (W - used) / 2;
+
+    const bars = display.map((r, i) => {
+      const x = ox + i * (barW + gap);
+      const col = r.conclusion === 'success' ? '#3fb950'
+                : r.conclusion === 'failure' ? '#f85149'
+                : !r.conclusion             ? '#58a6ff' : '#484f58';
+      const tip = `Run #${r.run_number} · ${r.conclusion ?? 'running'} · ${fmt(r.created_at)}`;
+      return `<rect x="${x.toFixed(1)}" y="6" width="${barW}" height="${H-12}" rx="3" fill="${col}" fill-opacity="0.85"><title>${esc(tip)}</title></rect>`;
+    }).join('');
+
+    return `<svg viewBox="0 0 ${W} ${H}" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:${H}px;display:block">${bars}</svg>`;
+  }
+
+  // Donut segment path (start/end in radians, 0 = top)
+  function donutSegPath(cx, cy, or_, ir, a0, a1) {
+    const pt = (r, a) => `${(cx + r * Math.sin(a)).toFixed(2)},${(cy - r * Math.cos(a)).toFixed(2)}`;
+    const lg = (a1 - a0) > Math.PI ? 1 : 0;
+    return `M${pt(or_,a0)}A${or_},${or_} 0 ${lg},1 ${pt(or_,a1)}L${pt(ir,a1)}A${ir},${ir} 0 ${lg},0 ${pt(ir,a0)}Z`;
+  }
+
+  // Donut chart: segments = [{value, color, label}], total = sum
+  function buildDonutSVG(segments, total) {
+    const CX = 74, CY = 74, OR = 62, IR = 40, W = 252, H = 152;
+    const nonZero = segments.filter(s => s.value > 0);
+
+    let paths;
+    if (nonZero.length === 1) {
+      // Single segment — draw a full annulus (path arc trick fails for 360°)
+      const col = nonZero[0].color;
+      paths = `<circle cx="${CX}" cy="${CY}" r="${OR}" fill="${col}"/>
+               <circle cx="${CX}" cy="${CY}" r="${IR}" fill="#0d1117"/>`;
+    } else {
+      let angle = 0;
+      paths = nonZero.map(s => {
+        const sweep = (s.value / total) * 2 * Math.PI;
+        const d = donutSegPath(CX, CY, OR, IR, angle, angle + sweep);
+        angle += sweep;
+        return `<path d="${d}" fill="${s.color}"><title>${esc(s.label)}: ${s.value}</title></path>`;
+      }).join('');
+    }
+
+    // Centre: % of scope that's implemented (anything that isn't "Planned")
+    const implemented = segments.filter(s => s.label !== 'Planned').reduce((a,s) => a+s.value, 0);
+    const pct = total > 0 ? Math.round(implemented / total * 100) : 0;
+
+    const centre = `
+      <text x="${CX}" y="${CY-5}"  text-anchor="middle" fill="#e6edf3" font-size="19" font-weight="700" font-family="-apple-system,system-ui">${pct}%</text>
+      <text x="${CX}" y="${CY+11}" text-anchor="middle" fill="#8b949e"  font-size="9"  letter-spacing="0.5" font-family="-apple-system,system-ui">COVERED</text>`;
+
+    const LX = 150, LY0 = 16, LS = 28;
+    const legend = segments.map((s, i) => {
+      const y = LY0 + i * LS;
+      return `
+        <rect x="${LX}" y="${y}" width="9" height="9" rx="2" fill="${s.color}"/>
+        <text x="${LX+14}" y="${y+9}" fill="#c9d1d9" font-size="11" font-family="-apple-system,system-ui">${esc(s.label)}</text>
+        <text x="${W-8}"   y="${y+9}" text-anchor="end" fill="#e6edf3" font-size="12" font-weight="600" font-family="-apple-system,system-ui">${s.value}</text>`;
+    }).join('');
+
+    return `<svg viewBox="0 0 ${W} ${H}" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:${H}px;display:block">
+      ${paths}${centre}${legend}
+    </svg>`;
+  }
+
+  function renderCoverageChart(slug, runData, planned) {
+    const el = document.getElementById(`coverage-${slug}`);
+    if (!el) return;
+
+    const passed  = runData ? (runData.summary?.passed  ?? 0) : 0;
+    const failed  = runData ? (runData.summary?.failed  ?? 0) : 0;
+    const fixme   = runData ? (runData.summary?.fixme   ?? 0) : 0;
+    const plannedN = planned.length;
+    const total    = passed + failed + fixme + plannedN;
+
+    if (total === 0) {
+      el.innerHTML = '<span class="loading-msg">No data yet.</span>';
+      return;
+    }
+
+    const segments = [
+      { value: passed,  color: '#3fb950', label: 'Passing' },
+      { value: failed,  color: '#f85149', label: 'Failing' },
+      { value: fixme,   color: '#484f58', label: 'Fixme'   },
+      { value: plannedN,color: '#d29922', label: 'Planned' },
+    ];
+
+    el.innerHTML = buildDonutSVG(segments, total);
+  }
+
+  // ── Fetchers ──────────────────────────────────────────────────────────────
+  async function fetchKnownRunIds() {
+    if (knownRunIds !== null) return knownRunIds;
+    try {
+      const res = await fetch(
+        `https://api.github.com/repos/${REPO}/contents/docs/data/runs`,
+        { headers: { Accept: 'application/vnd.github+json' } }
+      );
+      if (!res.ok) { knownRunIds = new Set(); return knownRunIds; }
+      const files = await res.json();
+      knownRunIds = new Set(files.filter(f => f.name.endsWith('.json')).map(f => f.name.slice(0,-5)));
+    } catch(_) { knownRunIds = new Set(); }
+    return knownRunIds;
+  }
+
   async function fetchRunData(runId) {
     if (runDataCache.has(runId)) return runDataCache.get(runId);
     try {
@@ -292,45 +495,69 @@
       const data = await res.json();
       runDataCache.set(runId, data);
       return data;
-    } catch (_) {
-      runDataCache.set(runId, false);
-      return false;
-    }
+    } catch(_) { runDataCache.set(runId, false); return false; }
   }
 
-  // ── Sub-table for per-test results ────────────────────────────────────────
-  function renderSubTable(data) {
-    if (data === false) {
-      return '<p style="color:#57606a;font-size:13px;">No per-test data available for this run.</p>';
+  async function fetchPlanned(filename) {
+    if (plannedCache.has(filename)) return plannedCache.get(filename);
+    try {
+      const res = await fetch(`./planned-tests/${filename}`);
+      if (!res.ok) { plannedCache.set(filename, []); return []; }
+      const data = await res.json();
+      plannedCache.set(filename, data);
+      return data;
+    } catch(_) { plannedCache.set(filename, []); return []; }
+  }
+
+  async function fetchRuns() {
+    const cached = readCache();
+    if (cached) return { runs: cached.data.workflow_runs ?? [], ts: cached.ts, fromCache: true };
+    const res = await fetch(
+      `https://api.github.com/repos/${REPO}/actions/runs?per_page=50`,
+      { headers: { Accept: 'application/vnd.github+json' } }
+    );
+    if (!res.ok) {
+      const msg = res.status === 403 ? 'Rate limit reached or access denied.'
+                                     : `GitHub API returned HTTP ${res.status}.`;
+      document.getElementById('main-container').innerHTML =
+        `<div class="error-state">Could not load run history. ${msg}</div>`;
+      document.getElementById('summary-text').textContent = 'Error loading data.';
+      return { runs: null };
     }
+    const data = await res.json();
+    return { runs: data.workflow_runs ?? [], ts: writeCache(data), fromCache: false };
+  }
+
+  // ── Sub-table ─────────────────────────────────────────────────────────────
+  function renderSubTable(data) {
+    if (data === false)
+      return '<p class="loading-msg">No per-test data available for this run.</p>';
+
+    const { passed=0, failed=0, skipped=0, fixme=0 } = data.summary ?? {};
+    const summaryBadges = [
+      passed  ? `<span class="badge badge-pass">${passed} passed</span>`    : '',
+      failed  ? `<span class="badge badge-fail">${failed} failed</span>`    : '',
+      skipped ? `<span class="badge badge-amber">${skipped} skipped</span>` : '',
+      fixme   ? `<span class="badge badge-grey">${fixme} fixme</span>`      : '',
+    ].filter(Boolean).join('');
+
     const rows = data.tests.map(t => {
-      const errorHtml = t.error
+      const errHtml = t.error
         ? `<span class="error-text" onclick="this.classList.toggle('expanded')" title="${esc(t.error)}">${esc(t.error)}</span>`
-        : '—';
+        : '<span style="color:#484f58">—</span>';
       return `<tr>
         <td>${esc(t.title)}</td>
-        <td>${esc(t.suite)}</td>
-        <td>${esc(t.project)}</td>
+        <td><span style="color:#8b949e;font-size:12px">${esc(t.suite)}</span></td>
+        <td><span class="branch-tag">${esc(t.project)}</span></td>
         <td>${badgeForTestStatus(t.status)}</td>
-        <td style="white-space:nowrap">${esc(t.duration)}</td>
-        <td>${errorHtml}</td>
+        <td style="white-space:nowrap;color:#8b949e;font-size:12px">${esc(t.duration)}</td>
+        <td>${errHtml}</td>
       </tr>`;
     }).join('');
 
-    const { passed = 0, failed = 0, skipped = 0, fixme = 0 } = data.summary ?? {};
-    const summaryParts = [
-      passed  ? `<span class="badge badge-pass">${passed} passed</span>`   : '',
-      failed  ? `<span class="badge badge-fail">${failed} failed</span>`   : '',
-      skipped ? `<span class="badge badge-amber">${skipped} skipped</span>` : '',
-      fixme   ? `<span class="badge badge-grey">${fixme} fixme</span>`     : '',
-    ].filter(Boolean).join(' ');
-
-    return `
-      <div style="margin-bottom:8px;display:flex;gap:6px;flex-wrap:wrap;">${summaryParts}</div>
+    return `<div class="detail-summary">${summaryBadges}</div>
       <table class="sub-table">
-        <thead><tr>
-          <th>Test</th><th>Suite</th><th>Browser</th><th>Status</th><th>Duration</th><th>Error</th>
-        </tr></thead>
+        <thead><tr><th>Test</th><th>Suite</th><th>Browser</th><th>Status</th><th>Duration</th><th>Error</th></tr></thead>
         <tbody>${rows}</tbody>
       </table>`;
   }
@@ -348,145 +575,159 @@
       runRow.classList.remove('expanded');
       return;
     }
-
     detailRow.style.display = '';
     chevron.classList.add('open');
     runRow.classList.add('expanded');
 
-    if (!runDataCache.has(runId)) {
+    if (!runDataCache.has(runId))
       detailRow.querySelector('td').innerHTML =
         '<div class="detail-inner"><p class="loading-msg">Loading tests…</p></div>';
-    }
 
     const data = await fetchRunData(runId);
     detailRow.querySelector('td').innerHTML =
       `<div class="detail-inner">${renderSubTable(data)}</div>`;
   }
 
-  // ── Runs table ────────────────────────────────────────────────────────────
-  function renderRuns(runs) {
-    if (!runs.length) {
-      document.getElementById('runs-container').innerHTML =
-        '<div class="empty-state">No runs found.</div>';
-      return;
-    }
+  // ── Render one workflow section ───────────────────────────────────────────
+  function renderWorkflowSection(workflowName, runs) {
+    const slug     = slugify(workflowName);
+    const dotClass = dotForConclusion(runs[0]?.conclusion);
+    const trendSVG = buildRunTrendSVG(runs);
 
     const rows = runs.map(r => {
-      const commit    = (r.head_commit?.message || '').split('\n')[0].slice(0, 60);
-      const date      = fmt(r.created_at);
+      const commit    = (r.head_commit?.message || '').split('\n')[0].slice(0, 55);
       const runId     = String(r.id);
       const detailId  = `detail-${runId}`;
       const chevronId = `chev-${runId}`;
       const cached    = runDataCache.get(runId);
       const badge     = (cached ? badgeForSummary(cached.summary) : null) ?? badgeForConclusion(r.conclusion);
-
       return `
         <tr class="run-row" onclick="toggleRow('${runId}','${detailId}','${chevronId}')">
           <td class="run-num"><i class="chevron" id="${chevronId}">&#9654;</i>#${r.run_number}</td>
-          <td>${esc(r.name)}</td>
-          <td>${esc(r.head_branch)}</td>
-          <td style="white-space:nowrap">${date}</td>
-          <td>
-            <a class="commit-msg" href="${esc(r.html_url)}" title="${esc(commit)}"
-               onclick="event.stopPropagation()" target="_blank">${esc(commit)}</a>
-          </td>
+          <td><span class="branch-tag">${esc(r.head_branch)}</span></td>
+          <td style="white-space:nowrap;font-size:12px;color:#8b949e">${fmt(r.created_at)}</td>
+          <td><a class="commit-link" href="${esc(r.html_url)}" title="${esc(commit)}"
+                 onclick="event.stopPropagation()" target="_blank">${esc(commit || '(no message)')}</a></td>
           <td>${badge}</td>
         </tr>
-        <tr class="detail-row" id="${detailId}" style="display:none;">
-          <td colspan="6"></td>
-        </tr>`;
+        <tr class="detail-row" id="${detailId}" style="display:none;"><td colspan="5"></td></tr>`;
     }).join('');
 
-    document.getElementById('runs-container').innerHTML = `
-      <table>
-        <thead><tr>
-          <th>Run</th><th>Workflow</th><th>Branch</th><th>Date</th><th>Commit</th><th>Result</th>
-        </tr></thead>
-        <tbody>${rows}</tbody>
-      </table>`;
+    return `
+      <div class="workflow-section">
+        <div class="section-header">
+          <span class="status-dot ${dotClass}"></span>
+          <span class="section-title">${esc(workflowName)}</span>
+          <span class="section-meta">${runs.length} run${runs.length !== 1 ? 's' : ''}</span>
+        </div>
+        <div class="charts-row">
+          <div class="chart-card">
+            <div class="chart-label">Run Trend — last ${Math.min(runs.length,20)} runs</div>
+            <div class="chart-trend-wrap">${trendSVG}</div>
+          </div>
+          <div class="chart-card">
+            <div class="chart-label">Test Coverage</div>
+            <div id="coverage-${slug}"><span class="loading-msg">Loading…</span></div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-label">Run History</div>
+          <table>
+            <thead><tr><th>Run</th><th>Branch</th><th>Date</th><th>Commit</th><th>Result</th></tr></thead>
+            <tbody>${rows}</tbody>
+          </table>
+        </div>
+        <div class="card" id="planned-${slug}">
+          <div class="card-label">Planned Tests</div>
+          <div class="empty-state">Loading…</div>
+        </div>
+      </div>`;
   }
 
-  // ── Planned tests table ───────────────────────────────────────────────────
-  function renderPlanned(items) {
+  function renderPlannedIntoCard(slug, items) {
+    const card = document.getElementById(`planned-${slug}`);
+    if (!card) return;
     if (!items.length) {
-      document.getElementById('planned-container').innerHTML =
-        '<div class="empty-state">No planned tests defined.</div>';
+      card.innerHTML = '<div class="card-label">Planned Tests</div><div class="empty-state">No planned tests defined.</div>';
       return;
     }
     const rows = items.map(p => `
       <tr>
-        <td><strong>${esc(p.name)}</strong></td>
-        <td>${esc(p.description)}</td>
-        <td style="white-space:nowrap">${esc(p.addedDate)}</td>
+        <td class="planned-name">${esc(p.name)}</td>
+        <td class="planned-desc">${esc(p.description)}</td>
+        <td class="planned-date">${esc(p.addedDate)}</td>
       </tr>`).join('');
-
-    document.getElementById('planned-container').innerHTML = `
+    card.innerHTML = `
+      <div class="card-label">Planned Tests</div>
       <table>
         <thead><tr><th>Name</th><th>Description</th><th>Added</th></tr></thead>
         <tbody>${rows}</tbody>
       </table>`;
   }
 
-  // ── Main loaders ──────────────────────────────────────────────────────────
-  async function loadRuns(forceRefresh = false) {
+  // ── Main loader ───────────────────────────────────────────────────────────
+  async function loadDashboard(forceRefresh = false) {
     const btn = document.getElementById('refresh-btn');
     btn.disabled = true;
+    if (forceRefresh) { knownRunIds = null; sessionStorage.removeItem(CACHE_KEY); }
 
     try {
-      let data, ts, fromCache = false;
+      const [ids, { runs, ts, fromCache }] = await Promise.all([
+        fetchKnownRunIds(),
+        fetchRuns(),
+      ]);
+      if (!runs) return;
 
-      if (!forceRefresh) {
-        const cached = readCache();
-        if (cached) { ({ data, ts } = cached); fromCache = true; }
+      const filtered = runs.filter(r => ids.has(String(r.id)));
+      if (!filtered.length) {
+        document.getElementById('main-container').innerHTML =
+          '<div class="empty-state">No test runs with results found yet.</div>';
+        document.getElementById('summary-text').textContent =
+          `0 runs · last fetched ${new Date(ts).toLocaleTimeString()}${fromCache ? ' (cached)' : ''}`;
+        return;
       }
 
-      if (!fromCache) {
-        const res = await fetch(
-          `https://api.github.com/repos/${REPO}/actions/runs?per_page=50`,
-          { headers: { Accept: 'application/vnd.github+json' } }
-        );
-        if (!res.ok) {
-          const msg = res.status === 403
-            ? 'Rate limit reached or access denied. If this is a private repository, authentication is required.'
-            : `GitHub API returned HTTP ${res.status}.`;
-          document.getElementById('runs-container').innerHTML =
-            `<div class="error-state">Could not load run history. ${msg}</div>`;
-          document.getElementById('summary-text').textContent = 'Error loading data.';
-          return;
-        }
-        data = await res.json();
-        ts   = writeCache(data);
+      const groups = new Map();
+      for (const r of filtered) {
+        if (!groups.has(r.name)) groups.set(r.name, []);
+        groups.get(r.name).push(r);
       }
 
-      const runs = data.workflow_runs ?? [];
-      renderRuns(runs);
+      document.getElementById('main-container').innerHTML =
+        [...groups.entries()].map(([name, groupRuns]) =>
+          renderWorkflowSection(name, groupRuns)
+        ).join('');
+
+      // For each workflow: fetch planned tests + latest completed run JSON in parallel,
+      // then update both the coverage chart and the planned tests card
+      for (const [name, groupRuns] of groups) {
+        const slug     = slugify(name);
+        const filename = slug + '.json';
+        const latestWithResults = groupRuns.find(r => ids.has(String(r.id)));
+
+        Promise.all([
+          fetchPlanned(filename),
+          latestWithResults ? fetchRunData(String(latestWithResults.id)) : Promise.resolve(false),
+        ]).then(([planned, runData]) => {
+          renderPlannedIntoCard(slug, planned);
+          renderCoverageChart(slug, runData, planned);
+        });
+      }
 
       const fetchedAt = new Date(ts).toLocaleTimeString();
       document.getElementById('summary-text').textContent =
-        `${runs.length} run${runs.length !== 1 ? 's' : ''} · last fetched ${fetchedAt}${fromCache ? ' (cached)' : ''}`;
+        `${filtered.length} run${filtered.length !== 1 ? 's' : ''} across ${groups.size} workflow${groups.size !== 1 ? 's' : ''} · last fetched ${fetchedAt}${fromCache ? ' (cached)' : ''}`;
 
     } catch (err) {
-      document.getElementById('runs-container').innerHTML =
-        `<div class="error-state">Failed to load run history: ${esc(err.message)}</div>`;
-      document.getElementById('summary-text').textContent = 'Error loading data.';
+      document.getElementById('main-container').innerHTML =
+        `<div class="error-state">Failed to load dashboard: ${esc(err.message)}</div>`;
+      document.getElementById('summary-text').textContent = 'Error.';
     } finally {
       btn.disabled = false;
     }
   }
 
-  async function loadPlanned() {
-    try {
-      const res = await fetch('./planned-tests.json');
-      if (!res.ok) throw new Error(`HTTP ${res.status}`);
-      renderPlanned(await res.json());
-    } catch (_) {
-      document.getElementById('planned-container').innerHTML =
-        '<div class="empty-state">No planned tests defined.</div>';
-    }
-  }
-
-  loadRuns();
-  loadPlanned();
+  loadDashboard();
 </script>
 
 </body>
