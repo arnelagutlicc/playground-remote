@@ -1,0 +1,104 @@
+{
+  "runId": "24782536563",
+  "workflowName": "Playwright Tests",
+  "timestamp": "2026-04-22T14:01:48.474Z",
+  "status": "passed",
+  "summary": {
+    "passed": 6,
+    "failed": 0,
+    "skipped": 0,
+    "fixme": 3
+  },
+  "tests": [
+    {
+      "id": "a30a6eba6312f6b87ea5-b06063a3e613764d08f8",
+      "title": "has title",
+      "suite": "example.spec.ts",
+      "project": "",
+      "status": "passed",
+      "duration": "0s",
+      "retries": 0,
+      "error": null
+    },
+    {
+      "id": "a30a6eba6312f6b87ea5-274e97907a6e3638a22f",
+      "title": "get started link",
+      "suite": "example.spec.ts",
+      "project": "",
+      "status": "passed",
+      "duration": "0s",
+      "retries": 0,
+      "error": null
+    },
+    {
+      "id": "a30a6eba6312f6b87ea5-e8184d1f7f794f8b71a7",
+      "title": "verify login flow",
+      "suite": "example.spec.ts",
+      "project": "",
+      "status": "fixme",
+      "duration": "0s",
+      "retries": 0,
+      "error": null
+    },
+    {
+      "id": "a30a6eba6312f6b87ea5-f53a5ad453cd33dc57d5",
+      "title": "has title",
+      "suite": "example.spec.ts",
+      "project": "",
+      "status": "passed",
+      "duration": "1s",
+      "retries": 0,
+      "error": null
+    },
+    {
+      "id": "a30a6eba6312f6b87ea5-bfe080d6fe34297f494c",
+      "title": "get started link",
+      "suite": "example.spec.ts",
+      "project": "",
+      "status": "passed",
+      "duration": "0s",
+      "retries": 0,
+      "error": null
+    },
+    {
+      "id": "a30a6eba6312f6b87ea5-8a0fbb25734f47c6dad2",
+      "title": "verify login flow",
+      "suite": "example.spec.ts",
+      "project": "",
+      "status": "fixme",
+      "duration": "0s",
+      "retries": 0,
+      "error": null
+    },
+    {
+      "id": "a30a6eba6312f6b87ea5-4a26ebd06a6b810edcc2",
+      "title": "has title",
+      "suite": "example.spec.ts",
+      "project": "",
+      "status": "passed",
+      "duration": "2s",
+      "retries": 0,
+      "error": null
+    },
+    {
+      "id": "a30a6eba6312f6b87ea5-1eb159041d56409ed83c",
+      "title": "get started link",
+      "suite": "example.spec.ts",
+      "project": "",
+      "status": "passed",
+      "duration": "2s",
+      "retries": 0,
+      "error": null
+    },
+    {
+      "id": "a30a6eba6312f6b87ea5-3062d073364a35e26a2d",
+      "title": "verify login flow",
+      "suite": "example.spec.ts",
+      "project": "",
+      "status": "fixme",
+      "duration": "0s",
+      "retries": 0,
+      "error": null
+    }
+  ]
+}
