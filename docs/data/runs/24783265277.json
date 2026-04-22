@@ -1,0 +1,1394 @@
+{
+  "runId": "24783265277",
+  "workflowName": "Playwright Tests",
+  "timestamp": "2026-04-22T14:15:09.087Z",
+  "status": "passed",
+  "summary": {
+    "passed": 6,
+    "failed": 0,
+    "skipped": 0,
+    "fixme": 132
+  },
+  "tests": [
+    {
+      "id": "a30a6eba6312f6b87ea5-b06063a3e613764d08f8",
+      "title": "has title",
+      "suite": "example.spec.ts",
+      "project": "",
+      "status": "passed",
+      "duration": "0s",
+      "retries": 0,
+      "error": null
+    },
+    {
+      "id": "a30a6eba6312f6b87ea5-274e97907a6e3638a22f",
+      "title": "get started link",
+      "suite": "example.spec.ts",
+      "project": "",
+      "status": "passed",
+      "duration": "0s",
+      "retries": 0,
+      "error": null
+    },
+    {
+      "id": "a30a6eba6312f6b87ea5-5f556808d53a6e76affd",
+      "title": "analytics in main nav",
+      "suite": "example.spec.ts",
+      "project": "",
+      "status": "fixme",
+      "duration": "0s",
+      "retries": 0,
+      "error": null
+    },
+    {
+      "id": "a30a6eba6312f6b87ea5-57d591297c2a6c790006",
+      "title": "navigate from codescene to analytics",
+      "suite": "example.spec.ts",
+      "project": "",
+      "status": "fixme",
+      "duration": "0s",
+      "retries": 0,
+      "error": null
+    },
+    {
+      "id": "a30a6eba6312f6b87ea5-c253d1caca76c1820a4b",
+      "title": "breadcrumb renders full path",
+      "suite": "example.spec.ts",
+      "project": "",
+      "status": "fixme",
+      "duration": "0s",
+      "retries": 0,
+      "error": null
+    },
+    {
+      "id": "a30a6eba6312f6b87ea5-c6f897a4cb2cd350272a",
+      "title": "dashboard defaults to area root",
+      "suite": "example.spec.ts",
+      "project": "",
+      "status": "fixme",
+      "duration": "0s",
+      "retries": 0,
+      "error": null
+    },
+    {
+      "id": "a30a6eba6312f6b87ea5-8d809321a747b0d2313e",
+      "title": "breadcrumb ancestor navigation",
+      "suite": "example.spec.ts",
+      "project": "",
+      "status": "fixme",
+      "duration": "0s",
+      "retries": 0,
+      "error": null
+    },
+    {
+      "id": "a30a6eba6312f6b87ea5-2b2ca6695def4f011384",
+      "title": "unassigned projects in tree",
+      "suite": "example.spec.ts",
+      "project": "",
+      "status": "fixme",
+      "duration": "0s",
+      "retries": 0,
+      "error": null
+    },
+    {
+      "id": "a30a6eba6312f6b87ea5-2928b7274ecf542f47c2",
+      "title": "area explorer collapse and expand",
+      "suite": "example.spec.ts",
+      "project": "",
+      "status": "fixme",
+      "duration": "0s",
+      "retries": 0,
+      "error": null
+    },
+    {
+      "id": "a30a6eba6312f6b87ea5-92bf768f230ed1d50207",
+      "title": "area explorer hierarchy",
+      "suite": "example.spec.ts",
+      "project": "",
+      "status": "fixme",
+      "duration": "0s",
+      "retries": 0,
+      "error": null
+    },
+    {
+      "id": "a30a6eba6312f6b87ea5-c752d847a34eb9110160",
+      "title": "search areas and projects",
+      "suite": "example.spec.ts",
+      "project": "",
+      "status": "fixme",
+      "duration": "0s",
+      "retries": 0,
+      "error": null
+    },
+    {
+      "id": "a30a6eba6312f6b87ea5-c93669200180b9ca7a5d",
+      "title": "open project button in header",
+      "suite": "example.spec.ts",
+      "project": "",
+      "status": "fixme",
+      "duration": "0s",
+      "retries": 0,
+      "error": null
+    },
+    {
+      "id": "a30a6eba6312f6b87ea5-0110b7c2c7eeef96f200",
+      "title": "exploration dashboard loads four KPI cards",
+      "suite": "example.spec.ts",
+      "project": "",
+      "status": "fixme",
+      "duration": "0s",
+      "retries": 0,
+      "error": null
+    },
+    {
+      "id": "a30a6eba6312f6b87ea5-a1a77e6950b21e66f1e9",
+      "title": "code health card",
+      "suite": "example.spec.ts",
+      "project": "",
+      "status": "fixme",
+      "duration": "0s",
+      "retries": 0,
+      "error": null
+    },
+    {
+      "id": "a30a6eba6312f6b87ea5-f61eddae978d971f90b4",
+      "title": "hotspot code health card",
+      "suite": "example.spec.ts",
+      "project": "",
+      "status": "fixme",
+      "duration": "0s",
+      "retries": 0,
+      "error": null
+    },
+    {
+      "id": "a30a6eba6312f6b87ea5-0b9d724787fc71453e9a",
+      "title": "code coverage card",
+      "suite": "example.spec.ts",
+      "project": "",
+      "status": "fixme",
+      "duration": "0s",
+      "retries": 0,
+      "error": null
+    },
+    {
+      "id": "a30a6eba6312f6b87ea5-dcecfd2cabcdfcddfd4b",
+      "title": "hotspot code coverage card",
+      "suite": "example.spec.ts",
+      "project": "",
+      "status": "fixme",
+      "duration": "0s",
+      "retries": 0,
+      "error": null
+    },
+    {
+      "id": "a30a6eba6312f6b87ea5-490a02c228e72b6779c1",
+      "title": "weekly delta on KPI cards",
+      "suite": "example.spec.ts",
+      "project": "",
+      "status": "fixme",
+      "duration": "0s",
+      "retries": 0,
+      "error": null
+    },
+    {
+      "id": "a30a6eba6312f6b87ea5-446afa88c3b6ca31879b",
+      "title": "configuration warning notice",
+      "suite": "example.spec.ts",
+      "project": "",
+      "status": "fixme",
+      "duration": "0s",
+      "retries": 0,
+      "error": null
+    },
+    {
+      "id": "a30a6eba6312f6b87ea5-125d54b4eb43871cd280",
+      "title": "KPI area list sorted by score",
+      "suite": "example.spec.ts",
+      "project": "",
+      "status": "fixme",
+      "duration": "0s",
+      "retries": 0,
+      "error": null
+    },
+    {
+      "id": "a30a6eba6312f6b87ea5-aac1217f1c3f66ad77b4",
+      "title": "view all opens full area list",
+      "suite": "example.spec.ts",
+      "project": "",
+      "status": "fixme",
+      "duration": "0s",
+      "retries": 0,
+      "error": null
+    },
+    {
+      "id": "a30a6eba6312f6b87ea5-d9a24453e1a05b7a4aec",
+      "title": "leaf area hides sub-item list",
+      "suite": "example.spec.ts",
+      "project": "",
+      "status": "fixme",
+      "duration": "0s",
+      "retries": 0,
+      "error": null
+    },
+    {
+      "id": "a30a6eba6312f6b87ea5-71a926e0c8bcb0e3dca4",
+      "title": "KPI cards update on area change",
+      "suite": "example.spec.ts",
+      "project": "",
+      "status": "fixme",
+      "duration": "0s",
+      "retries": 0,
+      "error": null
+    },
+    {
+      "id": "a30a6eba6312f6b87ea5-d63d3a237efa4063a800",
+      "title": "child to parent aggregation",
+      "suite": "example.spec.ts",
+      "project": "",
+      "status": "fixme",
+      "duration": "0s",
+      "retries": 0,
+      "error": null
+    },
+    {
+      "id": "a30a6eba6312f6b87ea5-5faa7dfa5cad66655e52",
+      "title": "assign project to area",
+      "suite": "example.spec.ts",
+      "project": "",
+      "status": "fixme",
+      "duration": "0s",
+      "retries": 0,
+      "error": null
+    },
+    {
+      "id": "a30a6eba6312f6b87ea5-60374ff4db7030608386",
+      "title": "dev tools hidden for non-admins",
+      "suite": "example.spec.ts",
+      "project": "",
+      "status": "fixme",
+      "duration": "0s",
+      "retries": 0,
+      "error": null
+    },
+    {
+      "id": "a30a6eba6312f6b87ea5-6e61b6a32ff3d74f4cda",
+      "title": "dev tools visible for admins",
+      "suite": "example.spec.ts",
+      "project": "",
+      "status": "fixme",
+      "duration": "0s",
+      "retries": 0,
+      "error": null
+    },
+    {
+      "id": "a30a6eba6312f6b87ea5-2bd93c6e16e1d4ab19fb",
+      "title": "dashboard sandbox for admins",
+      "suite": "example.spec.ts",
+      "project": "",
+      "status": "fixme",
+      "duration": "0s",
+      "retries": 0,
+      "error": null
+    },
+    {
+      "id": "a30a6eba6312f6b87ea5-ce1c93e53eb601911a34",
+      "title": "user profile details",
+      "suite": "example.spec.ts",
+      "project": "",
+      "status": "fixme",
+      "duration": "0s",
+      "retries": 0,
+      "error": null
+    },
+    {
+      "id": "a30a6eba6312f6b87ea5-227057f1cdbe14c96704",
+      "title": "codescene external link from profile",
+      "suite": "example.spec.ts",
+      "project": "",
+      "status": "fixme",
+      "duration": "0s",
+      "retries": 0,
+      "error": null
+    },
+    {
+      "id": "a30a6eba6312f6b87ea5-fdc3e4dfa1d4156b74ee",
+      "title": "log out redirects to login",
+      "suite": "example.spec.ts",
+      "project": "",
+      "status": "fixme",
+      "duration": "0s",
+      "retries": 0,
+      "error": null
+    },
+    {
+      "id": "a30a6eba6312f6b87ea5-9be9a6ef523217029ffd",
+      "title": "filter standard codescene by area",
+      "suite": "example.spec.ts",
+      "project": "",
+      "status": "fixme",
+      "duration": "0s",
+      "retries": 0,
+      "error": null
+    },
+    {
+      "id": "a30a6eba6312f6b87ea5-c2c65499e1fd5a65ad05",
+      "title": "empty area state",
+      "suite": "example.spec.ts",
+      "project": "",
+      "status": "fixme",
+      "duration": "0s",
+      "retries": 0,
+      "error": null
+    },
+    {
+      "id": "a30a6eba6312f6b87ea5-7a0e191af3092259ceb7",
+      "title": "unplanned work card",
+      "suite": "example.spec.ts",
+      "project": "",
+      "status": "fixme",
+      "duration": "0s",
+      "retries": 0,
+      "error": null
+    },
+    {
+      "id": "a30a6eba6312f6b87ea5-86d4e508c83df236dc66",
+      "title": "unplanned work weekly delta",
+      "suite": "example.spec.ts",
+      "project": "",
+      "status": "fixme",
+      "duration": "0s",
+      "retries": 0,
+      "error": null
+    },
+    {
+      "id": "a30a6eba6312f6b87ea5-97161ccf058013c5ad4e",
+      "title": "KPI card info tooltip",
+      "suite": "example.spec.ts",
+      "project": "",
+      "status": "fixme",
+      "duration": "0s",
+      "retries": 0,
+      "error": null
+    },
+    {
+      "id": "a30a6eba6312f6b87ea5-ba50c1688e904d78e21a",
+      "title": "sidebar navigation items",
+      "suite": "example.spec.ts",
+      "project": "",
+      "status": "fixme",
+      "duration": "0s",
+      "retries": 0,
+      "error": null
+    },
+    {
+      "id": "a30a6eba6312f6b87ea5-65c6dd26dcc15206a515",
+      "title": "sidebar collapse toggle",
+      "suite": "example.spec.ts",
+      "project": "",
+      "status": "fixme",
+      "duration": "0s",
+      "retries": 0,
+      "error": null
+    },
+    {
+      "id": "a30a6eba6312f6b87ea5-454303083a2fc62e6418",
+      "title": "dashboards section in sidebar",
+      "suite": "example.spec.ts",
+      "project": "",
+      "status": "fixme",
+      "duration": "0s",
+      "retries": 0,
+      "error": null
+    },
+    {
+      "id": "a30a6eba6312f6b87ea5-29c5335d67bd4bac8651",
+      "title": "add dashboard button",
+      "suite": "example.spec.ts",
+      "project": "",
+      "status": "fixme",
+      "duration": "0s",
+      "retries": 0,
+      "error": null
+    },
+    {
+      "id": "a30a6eba6312f6b87ea5-d9229a5f294d67e8d176",
+      "title": "theme toggle",
+      "suite": "example.spec.ts",
+      "project": "",
+      "status": "fixme",
+      "duration": "0s",
+      "retries": 0,
+      "error": null
+    },
+    {
+      "id": "a30a6eba6312f6b87ea5-2e9ca9f3048b8210e28a",
+      "title": "area links navigate from KPI table",
+      "suite": "example.spec.ts",
+      "project": "",
+      "status": "fixme",
+      "duration": "0s",
+      "retries": 0,
+      "error": null
+    },
+    {
+      "id": "a30a6eba6312f6b87ea5-0b467226445967363c7f",
+      "title": "per-KPI configuration count",
+      "suite": "example.spec.ts",
+      "project": "",
+      "status": "fixme",
+      "duration": "0s",
+      "retries": 0,
+      "error": null
+    },
+    {
+      "id": "a30a6eba6312f6b87ea5-c08b7fc61d0055461106",
+      "title": "query project metrics",
+      "suite": "example.spec.ts",
+      "project": "",
+      "status": "fixme",
+      "duration": "0s",
+      "retries": 0,
+      "error": null
+    },
+    {
+      "id": "a30a6eba6312f6b87ea5-9bca049587abbb89eef2",
+      "title": "open project link from analytics list",
+      "suite": "example.spec.ts",
+      "project": "",
+      "status": "fixme",
+      "duration": "0s",
+      "retries": 0,
+      "error": null
+    },
+    {
+      "id": "a30a6eba6312f6b87ea5-af75b02cf721263d26f0",
+      "title": "date range displayed in header",
+      "suite": "example.spec.ts",
+      "project": "",
+      "status": "fixme",
+      "duration": "0s",
+      "retries": 0,
+      "error": null
+    },
+    {
+      "id": "a30a6eba6312f6b87ea5-f53a5ad453cd33dc57d5",
+      "title": "has title",
+      "suite": "example.spec.ts",
+      "project": "",
+      "status": "passed",
+      "duration": "1s",
+      "retries": 0,
+      "error": null
+    },
+    {
+      "id": "a30a6eba6312f6b87ea5-bfe080d6fe34297f494c",
+      "title": "get started link",
+      "suite": "example.spec.ts",
+      "project": "",
+      "status": "passed",
+      "duration": "0s",
+      "retries": 0,
+      "error": null
+    },
+    {
+      "id": "a30a6eba6312f6b87ea5-5d0d59acbd6316dafa97",
+      "title": "analytics in main nav",
+      "suite": "example.spec.ts",
+      "project": "",
+      "status": "fixme",
+      "duration": "0s",
+      "retries": 0,
+      "error": null
+    },
+    {
+      "id": "a30a6eba6312f6b87ea5-765ed5d41ab128c7c59e",
+      "title": "navigate from codescene to analytics",
+      "suite": "example.spec.ts",
+      "project": "",
+      "status": "fixme",
+      "duration": "0s",
+      "retries": 0,
+      "error": null
+    },
+    {
+      "id": "a30a6eba6312f6b87ea5-dca3121ff6382d1d0ab9",
+      "title": "breadcrumb renders full path",
+      "suite": "example.spec.ts",
+      "project": "",
+      "status": "fixme",
+      "duration": "0s",
+      "retries": 0,
+      "error": null
+    },
+    {
+      "id": "a30a6eba6312f6b87ea5-c1ae3400e5daa6b58077",
+      "title": "dashboard defaults to area root",
+      "suite": "example.spec.ts",
+      "project": "",
+      "status": "fixme",
+      "duration": "0s",
+      "retries": 0,
+      "error": null
+    },
+    {
+      "id": "a30a6eba6312f6b87ea5-05efd315f8cdb48acd5b",
+      "title": "breadcrumb ancestor navigation",
+      "suite": "example.spec.ts",
+      "project": "",
+      "status": "fixme",
+      "duration": "0s",
+      "retries": 0,
+      "error": null
+    },
+    {
+      "id": "a30a6eba6312f6b87ea5-d6966caaf7e67ee1d08c",
+      "title": "unassigned projects in tree",
+      "suite": "example.spec.ts",
+      "project": "",
+      "status": "fixme",
+      "duration": "0s",
+      "retries": 0,
+      "error": null
+    },
+    {
+      "id": "a30a6eba6312f6b87ea5-0866019773037c1e1a12",
+      "title": "area explorer collapse and expand",
+      "suite": "example.spec.ts",
+      "project": "",
+      "status": "fixme",
+      "duration": "0s",
+      "retries": 0,
+      "error": null
+    },
+    {
+      "id": "a30a6eba6312f6b87ea5-2e08616cfbe79e88ad86",
+      "title": "area explorer hierarchy",
+      "suite": "example.spec.ts",
+      "project": "",
+      "status": "fixme",
+      "duration": "0s",
+      "retries": 0,
+      "error": null
+    },
+    {
+      "id": "a30a6eba6312f6b87ea5-10b5f7e0295b376f6b2b",
+      "title": "search areas and projects",
+      "suite": "example.spec.ts",
+      "project": "",
+      "status": "fixme",
+      "duration": "0s",
+      "retries": 0,
+      "error": null
+    },
+    {
+      "id": "a30a6eba6312f6b87ea5-888fcea23ec6f1417882",
+      "title": "open project button in header",
+      "suite": "example.spec.ts",
+      "project": "",
+      "status": "fixme",
+      "duration": "0s",
+      "retries": 0,
+      "error": null
+    },
+    {
+      "id": "a30a6eba6312f6b87ea5-6e15291a0a7ad97c611b",
+      "title": "exploration dashboard loads four KPI cards",
+      "suite": "example.spec.ts",
+      "project": "",
+      "status": "fixme",
+      "duration": "0s",
+      "retries": 0,
+      "error": null
+    },
+    {
+      "id": "a30a6eba6312f6b87ea5-7d9e6e7ebb427094f9b9",
+      "title": "code health card",
+      "suite": "example.spec.ts",
+      "project": "",
+      "status": "fixme",
+      "duration": "0s",
+      "retries": 0,
+      "error": null
+    },
+    {
+      "id": "a30a6eba6312f6b87ea5-09fbc55950748b00b71b",
+      "title": "hotspot code health card",
+      "suite": "example.spec.ts",
+      "project": "",
+      "status": "fixme",
+      "duration": "0s",
+      "retries": 0,
+      "error": null
+    },
+    {
+      "id": "a30a6eba6312f6b87ea5-fc3e7d5b5cc7afa32635",
+      "title": "code coverage card",
+      "suite": "example.spec.ts",
+      "project": "",
+      "status": "fixme",
+      "duration": "0s",
+      "retries": 0,
+      "error": null
+    },
+    {
+      "id": "a30a6eba6312f6b87ea5-948b02f436f770fa6b51",
+      "title": "hotspot code coverage card",
+      "suite": "example.spec.ts",
+      "project": "",
+      "status": "fixme",
+      "duration": "0s",
+      "retries": 0,
+      "error": null
+    },
+    {
+      "id": "a30a6eba6312f6b87ea5-3f55ecae6c773bfbf870",
+      "title": "weekly delta on KPI cards",
+      "suite": "example.spec.ts",
+      "project": "",
+      "status": "fixme",
+      "duration": "0s",
+      "retries": 0,
+      "error": null
+    },
+    {
+      "id": "a30a6eba6312f6b87ea5-cbd0c5d7c5483f9ca9d7",
+      "title": "configuration warning notice",
+      "suite": "example.spec.ts",
+      "project": "",
+      "status": "fixme",
+      "duration": "0s",
+      "retries": 0,
+      "error": null
+    },
+    {
+      "id": "a30a6eba6312f6b87ea5-3b03ce8f11a6b3783ee0",
+      "title": "KPI area list sorted by score",
+      "suite": "example.spec.ts",
+      "project": "",
+      "status": "fixme",
+      "duration": "0s",
+      "retries": 0,
+      "error": null
+    },
+    {
+      "id": "a30a6eba6312f6b87ea5-8b77caedd72ddd029c84",
+      "title": "view all opens full area list",
+      "suite": "example.spec.ts",
+      "project": "",
+      "status": "fixme",
+      "duration": "0s",
+      "retries": 0,
+      "error": null
+    },
+    {
+      "id": "a30a6eba6312f6b87ea5-bbb10c180f4d90135f4f",
+      "title": "leaf area hides sub-item list",
+      "suite": "example.spec.ts",
+      "project": "",
+      "status": "fixme",
+      "duration": "0s",
+      "retries": 0,
+      "error": null
+    },
+    {
+      "id": "a30a6eba6312f6b87ea5-a1d3a07a0c16911aeb8c",
+      "title": "KPI cards update on area change",
+      "suite": "example.spec.ts",
+      "project": "",
+      "status": "fixme",
+      "duration": "0s",
+      "retries": 0,
+      "error": null
+    },
+    {
+      "id": "a30a6eba6312f6b87ea5-8a08cf6ae0195497db5d",
+      "title": "child to parent aggregation",
+      "suite": "example.spec.ts",
+      "project": "",
+      "status": "fixme",
+      "duration": "0s",
+      "retries": 0,
+      "error": null
+    },
+    {
+      "id": "a30a6eba6312f6b87ea5-e1e2b189c65fda80d98c",
+      "title": "assign project to area",
+      "suite": "example.spec.ts",
+      "project": "",
+      "status": "fixme",
+      "duration": "0s",
+      "retries": 0,
+      "error": null
+    },
+    {
+      "id": "a30a6eba6312f6b87ea5-79c483c53a03a599ec51",
+      "title": "dev tools hidden for non-admins",
+      "suite": "example.spec.ts",
+      "project": "",
+      "status": "fixme",
+      "duration": "0s",
+      "retries": 0,
+      "error": null
+    },
+    {
+      "id": "a30a6eba6312f6b87ea5-04490cf3875c21b6cf10",
+      "title": "dev tools visible for admins",
+      "suite": "example.spec.ts",
+      "project": "",
+      "status": "fixme",
+      "duration": "0s",
+      "retries": 0,
+      "error": null
+    },
+    {
+      "id": "a30a6eba6312f6b87ea5-e057327cfeb944187e01",
+      "title": "dashboard sandbox for admins",
+      "suite": "example.spec.ts",
+      "project": "",
+      "status": "fixme",
+      "duration": "0s",
+      "retries": 0,
+      "error": null
+    },
+    {
+      "id": "a30a6eba6312f6b87ea5-3bf9ecc00caaa71ca104",
+      "title": "user profile details",
+      "suite": "example.spec.ts",
+      "project": "",
+      "status": "fixme",
+      "duration": "0s",
+      "retries": 0,
+      "error": null
+    },
+    {
+      "id": "a30a6eba6312f6b87ea5-29bbee565e056fc2b214",
+      "title": "codescene external link from profile",
+      "suite": "example.spec.ts",
+      "project": "",
+      "status": "fixme",
+      "duration": "0s",
+      "retries": 0,
+      "error": null
+    },
+    {
+      "id": "a30a6eba6312f6b87ea5-6d7bf422f5d159791f89",
+      "title": "log out redirects to login",
+      "suite": "example.spec.ts",
+      "project": "",
+      "status": "fixme",
+      "duration": "0s",
+      "retries": 0,
+      "error": null
+    },
+    {
+      "id": "a30a6eba6312f6b87ea5-39d36b35326f1737826b",
+      "title": "filter standard codescene by area",
+      "suite": "example.spec.ts",
+      "project": "",
+      "status": "fixme",
+      "duration": "0s",
+      "retries": 0,
+      "error": null
+    },
+    {
+      "id": "a30a6eba6312f6b87ea5-457ae02661372cfba8ff",
+      "title": "empty area state",
+      "suite": "example.spec.ts",
+      "project": "",
+      "status": "fixme",
+      "duration": "0s",
+      "retries": 0,
+      "error": null
+    },
+    {
+      "id": "a30a6eba6312f6b87ea5-d0a2c1521250193dfa6e",
+      "title": "unplanned work card",
+      "suite": "example.spec.ts",
+      "project": "",
+      "status": "fixme",
+      "duration": "0s",
+      "retries": 0,
+      "error": null
+    },
+    {
+      "id": "a30a6eba6312f6b87ea5-72bc6a6b7c270991b0a0",
+      "title": "unplanned work weekly delta",
+      "suite": "example.spec.ts",
+      "project": "",
+      "status": "fixme",
+      "duration": "0s",
+      "retries": 0,
+      "error": null
+    },
+    {
+      "id": "a30a6eba6312f6b87ea5-c33a75e67b4a23a08442",
+      "title": "KPI card info tooltip",
+      "suite": "example.spec.ts",
+      "project": "",
+      "status": "fixme",
+      "duration": "0s",
+      "retries": 0,
+      "error": null
+    },
+    {
+      "id": "a30a6eba6312f6b87ea5-2cec8132720857d38cc2",
+      "title": "sidebar navigation items",
+      "suite": "example.spec.ts",
+      "project": "",
+      "status": "fixme",
+      "duration": "0s",
+      "retries": 0,
+      "error": null
+    },
+    {
+      "id": "a30a6eba6312f6b87ea5-cabfdd0d134a33db174f",
+      "title": "sidebar collapse toggle",
+      "suite": "example.spec.ts",
+      "project": "",
+      "status": "fixme",
+      "duration": "0s",
+      "retries": 0,
+      "error": null
+    },
+    {
+      "id": "a30a6eba6312f6b87ea5-6b870fac4fb2c48535b7",
+      "title": "dashboards section in sidebar",
+      "suite": "example.spec.ts",
+      "project": "",
+      "status": "fixme",
+      "duration": "0s",
+      "retries": 0,
+      "error": null
+    },
+    {
+      "id": "a30a6eba6312f6b87ea5-684254c93895772b460d",
+      "title": "add dashboard button",
+      "suite": "example.spec.ts",
+      "project": "",
+      "status": "fixme",
+      "duration": "0s",
+      "retries": 0,
+      "error": null
+    },
+    {
+      "id": "a30a6eba6312f6b87ea5-2ffb3433e3034bcdfb74",
+      "title": "theme toggle",
+      "suite": "example.spec.ts",
+      "project": "",
+      "status": "fixme",
+      "duration": "0s",
+      "retries": 0,
+      "error": null
+    },
+    {
+      "id": "a30a6eba6312f6b87ea5-085173bf1d81e0d1e9ec",
+      "title": "area links navigate from KPI table",
+      "suite": "example.spec.ts",
+      "project": "",
+      "status": "fixme",
+      "duration": "0s",
+      "retries": 0,
+      "error": null
+    },
+    {
+      "id": "a30a6eba6312f6b87ea5-dc9555f2fe170ebdb59d",
+      "title": "per-KPI configuration count",
+      "suite": "example.spec.ts",
+      "project": "",
+      "status": "fixme",
+      "duration": "0s",
+      "retries": 0,
+      "error": null
+    },
+    {
+      "id": "a30a6eba6312f6b87ea5-eb9a1f81af6b56163cb2",
+      "title": "query project metrics",
+      "suite": "example.spec.ts",
+      "project": "",
+      "status": "fixme",
+      "duration": "0s",
+      "retries": 0,
+      "error": null
+    },
+    {
+      "id": "a30a6eba6312f6b87ea5-6e76528ff7e7abb8fdf1",
+      "title": "open project link from analytics list",
+      "suite": "example.spec.ts",
+      "project": "",
+      "status": "fixme",
+      "duration": "0s",
+      "retries": 0,
+      "error": null
+    },
+    {
+      "id": "a30a6eba6312f6b87ea5-2958dff832783a13aa0d",
+      "title": "date range displayed in header",
+      "suite": "example.spec.ts",
+      "project": "",
+      "status": "fixme",
+      "duration": "0s",
+      "retries": 0,
+      "error": null
+    },
+    {
+      "id": "a30a6eba6312f6b87ea5-4a26ebd06a6b810edcc2",
+      "title": "has title",
+      "suite": "example.spec.ts",
+      "project": "",
+      "status": "passed",
+      "duration": "1s",
+      "retries": 0,
+      "error": null
+    },
+    {
+      "id": "a30a6eba6312f6b87ea5-1eb159041d56409ed83c",
+      "title": "get started link",
+      "suite": "example.spec.ts",
+      "project": "",
+      "status": "passed",
+      "duration": "1s",
+      "retries": 0,
+      "error": null
+    },
+    {
+      "id": "a30a6eba6312f6b87ea5-ddf53fd0dc2e2e6f807c",
+      "title": "analytics in main nav",
+      "suite": "example.spec.ts",
+      "project": "",
+      "status": "fixme",
+      "duration": "0s",
+      "retries": 0,
+      "error": null
+    },
+    {
+      "id": "a30a6eba6312f6b87ea5-b2a1c68ed46ea2f008f3",
+      "title": "navigate from codescene to analytics",
+      "suite": "example.spec.ts",
+      "project": "",
+      "status": "fixme",
+      "duration": "0s",
+      "retries": 0,
+      "error": null
+    },
+    {
+      "id": "a30a6eba6312f6b87ea5-c8d213edd350023d4be3",
+      "title": "breadcrumb renders full path",
+      "suite": "example.spec.ts",
+      "project": "",
+      "status": "fixme",
+      "duration": "0s",
+      "retries": 0,
+      "error": null
+    },
+    {
+      "id": "a30a6eba6312f6b87ea5-848f60ecbd87ae16d600",
+      "title": "dashboard defaults to area root",
+      "suite": "example.spec.ts",
+      "project": "",
+      "status": "fixme",
+      "duration": "0s",
+      "retries": 0,
+      "error": null
+    },
+    {
+      "id": "a30a6eba6312f6b87ea5-66623aa4528ab2b26eb2",
+      "title": "breadcrumb ancestor navigation",
+      "suite": "example.spec.ts",
+      "project": "",
+      "status": "fixme",
+      "duration": "0s",
+      "retries": 0,
+      "error": null
+    },
+    {
+      "id": "a30a6eba6312f6b87ea5-388a27a6eb6e481dd2cd",
+      "title": "unassigned projects in tree",
+      "suite": "example.spec.ts",
+      "project": "",
+      "status": "fixme",
+      "duration": "0s",
+      "retries": 0,
+      "error": null
+    },
+    {
+      "id": "a30a6eba6312f6b87ea5-9526ac8bfbc5acd5a003",
+      "title": "area explorer collapse and expand",
+      "suite": "example.spec.ts",
+      "project": "",
+      "status": "fixme",
+      "duration": "0s",
+      "retries": 0,
+      "error": null
+    },
+    {
+      "id": "a30a6eba6312f6b87ea5-6b448df86ef9db87a01c",
+      "title": "area explorer hierarchy",
+      "suite": "example.spec.ts",
+      "project": "",
+      "status": "fixme",
+      "duration": "0s",
+      "retries": 0,
+      "error": null
+    },
+    {
+      "id": "a30a6eba6312f6b87ea5-4eb3d7c891be19ebf773",
+      "title": "search areas and projects",
+      "suite": "example.spec.ts",
+      "project": "",
+      "status": "fixme",
+      "duration": "0s",
+      "retries": 0,
+      "error": null
+    },
+    {
+      "id": "a30a6eba6312f6b87ea5-67b81e2e709d4ccc3908",
+      "title": "open project button in header",
+      "suite": "example.spec.ts",
+      "project": "",
+      "status": "fixme",
+      "duration": "0s",
+      "retries": 0,
+      "error": null
+    },
+    {
+      "id": "a30a6eba6312f6b87ea5-bab0274e630cc67f1714",
+      "title": "exploration dashboard loads four KPI cards",
+      "suite": "example.spec.ts",
+      "project": "",
+      "status": "fixme",
+      "duration": "0s",
+      "retries": 0,
+      "error": null
+    },
+    {
+      "id": "a30a6eba6312f6b87ea5-2668b6ee6dc44ef2d26f",
+      "title": "code health card",
+      "suite": "example.spec.ts",
+      "project": "",
+      "status": "fixme",
+      "duration": "0s",
+      "retries": 0,
+      "error": null
+    },
+    {
+      "id": "a30a6eba6312f6b87ea5-2f6fa394641371d216c9",
+      "title": "hotspot code health card",
+      "suite": "example.spec.ts",
+      "project": "",
+      "status": "fixme",
+      "duration": "0s",
+      "retries": 0,
+      "error": null
+    },
+    {
+      "id": "a30a6eba6312f6b87ea5-0f20922df2c0586286f0",
+      "title": "code coverage card",
+      "suite": "example.spec.ts",
+      "project": "",
+      "status": "fixme",
+      "duration": "0s",
+      "retries": 0,
+      "error": null
+    },
+    {
+      "id": "a30a6eba6312f6b87ea5-3e324f25925dc5e04227",
+      "title": "hotspot code coverage card",
+      "suite": "example.spec.ts",
+      "project": "",
+      "status": "fixme",
+      "duration": "0s",
+      "retries": 0,
+      "error": null
+    },
+    {
+      "id": "a30a6eba6312f6b87ea5-e6f60c41c440c1d2307d",
+      "title": "weekly delta on KPI cards",
+      "suite": "example.spec.ts",
+      "project": "",
+      "status": "fixme",
+      "duration": "0s",
+      "retries": 0,
+      "error": null
+    },
+    {
+      "id": "a30a6eba6312f6b87ea5-3091749388ce73f18f50",
+      "title": "configuration warning notice",
+      "suite": "example.spec.ts",
+      "project": "",
+      "status": "fixme",
+      "duration": "0s",
+      "retries": 0,
+      "error": null
+    },
+    {
+      "id": "a30a6eba6312f6b87ea5-6eb49a32cef549b3b839",
+      "title": "KPI area list sorted by score",
+      "suite": "example.spec.ts",
+      "project": "",
+      "status": "fixme",
+      "duration": "0s",
+      "retries": 0,
+      "error": null
+    },
+    {
+      "id": "a30a6eba6312f6b87ea5-762aac41878b1319b304",
+      "title": "view all opens full area list",
+      "suite": "example.spec.ts",
+      "project": "",
+      "status": "fixme",
+      "duration": "0s",
+      "retries": 0,
+      "error": null
+    },
+    {
+      "id": "a30a6eba6312f6b87ea5-6a5d40f4bd16740927ac",
+      "title": "leaf area hides sub-item list",
+      "suite": "example.spec.ts",
+      "project": "",
+      "status": "fixme",
+      "duration": "0s",
+      "retries": 0,
+      "error": null
+    },
+    {
+      "id": "a30a6eba6312f6b87ea5-77c69e6c6f28b86af7dc",
+      "title": "KPI cards update on area change",
+      "suite": "example.spec.ts",
+      "project": "",
+      "status": "fixme",
+      "duration": "0s",
+      "retries": 0,
+      "error": null
+    },
+    {
+      "id": "a30a6eba6312f6b87ea5-17d910c77589e03d29dc",
+      "title": "child to parent aggregation",
+      "suite": "example.spec.ts",
+      "project": "",
+      "status": "fixme",
+      "duration": "0s",
+      "retries": 0,
+      "error": null
+    },
+    {
+      "id": "a30a6eba6312f6b87ea5-1d9a3117f4511da4462b",
+      "title": "assign project to area",
+      "suite": "example.spec.ts",
+      "project": "",
+      "status": "fixme",
+      "duration": "0s",
+      "retries": 0,
+      "error": null
+    },
+    {
+      "id": "a30a6eba6312f6b87ea5-11f0e48cc1cf15f3872a",
+      "title": "dev tools hidden for non-admins",
+      "suite": "example.spec.ts",
+      "project": "",
+      "status": "fixme",
+      "duration": "0s",
+      "retries": 0,
+      "error": null
+    },
+    {
+      "id": "a30a6eba6312f6b87ea5-32c4cff50a9abbf616fc",
+      "title": "dev tools visible for admins",
+      "suite": "example.spec.ts",
+      "project": "",
+      "status": "fixme",
+      "duration": "0s",
+      "retries": 0,
+      "error": null
+    },
+    {
+      "id": "a30a6eba6312f6b87ea5-694854bd6879510cd002",
+      "title": "dashboard sandbox for admins",
+      "suite": "example.spec.ts",
+      "project": "",
+      "status": "fixme",
+      "duration": "0s",
+      "retries": 0,
+      "error": null
+    },
+    {
+      "id": "a30a6eba6312f6b87ea5-5fb7f4194594fc5fe528",
+      "title": "user profile details",
+      "suite": "example.spec.ts",
+      "project": "",
+      "status": "fixme",
+      "duration": "0s",
+      "retries": 0,
+      "error": null
+    },
+    {
+      "id": "a30a6eba6312f6b87ea5-183cbdfc8c230cbfa752",
+      "title": "codescene external link from profile",
+      "suite": "example.spec.ts",
+      "project": "",
+      "status": "fixme",
+      "duration": "0s",
+      "retries": 0,
+      "error": null
+    },
+    {
+      "id": "a30a6eba6312f6b87ea5-3bd85aac51c4e83ff33f",
+      "title": "log out redirects to login",
+      "suite": "example.spec.ts",
+      "project": "",
+      "status": "fixme",
+      "duration": "0s",
+      "retries": 0,
+      "error": null
+    },
+    {
+      "id": "a30a6eba6312f6b87ea5-9017ea7e455615243803",
+      "title": "filter standard codescene by area",
+      "suite": "example.spec.ts",
+      "project": "",
+      "status": "fixme",
+      "duration": "0s",
+      "retries": 0,
+      "error": null
+    },
+    {
+      "id": "a30a6eba6312f6b87ea5-69a22a8481d75c4e3781",
+      "title": "empty area state",
+      "suite": "example.spec.ts",
+      "project": "",
+      "status": "fixme",
+      "duration": "0s",
+      "retries": 0,
+      "error": null
+    },
+    {
+      "id": "a30a6eba6312f6b87ea5-a4e9ad2ca12ad9c23da8",
+      "title": "unplanned work card",
+      "suite": "example.spec.ts",
+      "project": "",
+      "status": "fixme",
+      "duration": "0s",
+      "retries": 0,
+      "error": null
+    },
+    {
+      "id": "a30a6eba6312f6b87ea5-28106e9f0e33fd2bc569",
+      "title": "unplanned work weekly delta",
+      "suite": "example.spec.ts",
+      "project": "",
+      "status": "fixme",
+      "duration": "0s",
+      "retries": 0,
+      "error": null
+    },
+    {
+      "id": "a30a6eba6312f6b87ea5-9ca9974133baec9c4543",
+      "title": "KPI card info tooltip",
+      "suite": "example.spec.ts",
+      "project": "",
+      "status": "fixme",
+      "duration": "0s",
+      "retries": 0,
+      "error": null
+    },
+    {
+      "id": "a30a6eba6312f6b87ea5-be9208548ebfc4b94d02",
+      "title": "sidebar navigation items",
+      "suite": "example.spec.ts",
+      "project": "",
+      "status": "fixme",
+      "duration": "0s",
+      "retries": 0,
+      "error": null
+    },
+    {
+      "id": "a30a6eba6312f6b87ea5-67f4a17237576a0a71fc",
+      "title": "sidebar collapse toggle",
+      "suite": "example.spec.ts",
+      "project": "",
+      "status": "fixme",
+      "duration": "0s",
+      "retries": 0,
+      "error": null
+    },
+    {
+      "id": "a30a6eba6312f6b87ea5-855b55bcfe5e46174fbb",
+      "title": "dashboards section in sidebar",
+      "suite": "example.spec.ts",
+      "project": "",
+      "status": "fixme",
+      "duration": "0s",
+      "retries": 0,
+      "error": null
+    },
+    {
+      "id": "a30a6eba6312f6b87ea5-7523d4a9440d4dddb9e1",
+      "title": "add dashboard button",
+      "suite": "example.spec.ts",
+      "project": "",
+      "status": "fixme",
+      "duration": "0s",
+      "retries": 0,
+      "error": null
+    },
+    {
+      "id": "a30a6eba6312f6b87ea5-88e8db9baa27c8a29855",
+      "title": "theme toggle",
+      "suite": "example.spec.ts",
+      "project": "",
+      "status": "fixme",
+      "duration": "0s",
+      "retries": 0,
+      "error": null
+    },
+    {
+      "id": "a30a6eba6312f6b87ea5-e603e54ce178517a081c",
+      "title": "area links navigate from KPI table",
+      "suite": "example.spec.ts",
+      "project": "",
+      "status": "fixme",
+      "duration": "0s",
+      "retries": 0,
+      "error": null
+    },
+    {
+      "id": "a30a6eba6312f6b87ea5-34dadf1d6e3e8e49ebe1",
+      "title": "per-KPI configuration count",
+      "suite": "example.spec.ts",
+      "project": "",
+      "status": "fixme",
+      "duration": "0s",
+      "retries": 0,
+      "error": null
+    },
+    {
+      "id": "a30a6eba6312f6b87ea5-1a4cc72be72e84b812f4",
+      "title": "query project metrics",
+      "suite": "example.spec.ts",
+      "project": "",
+      "status": "fixme",
+      "duration": "0s",
+      "retries": 0,
+      "error": null
+    },
+    {
+      "id": "a30a6eba6312f6b87ea5-bd625f3592aa596f3059",
+      "title": "open project link from analytics list",
+      "suite": "example.spec.ts",
+      "project": "",
+      "status": "fixme",
+      "duration": "0s",
+      "retries": 0,
+      "error": null
+    },
+    {
+      "id": "a30a6eba6312f6b87ea5-8697ac2fc0873f494ace",
+      "title": "date range displayed in header",
+      "suite": "example.spec.ts",
+      "project": "",
+      "status": "fixme",
+      "duration": "0s",
+      "retries": 0,
+      "error": null
+    }
+  ]
+}
